@@ -1,0 +1,24 @@
+{
+  "Mac" : [
+    {
+      "name" : "Quick",
+      "hash" : "c44be2638d935a67e7a48a3586ded6f7776b6c17c35054cef387ddc0cc8a450a"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+    {
+      "name" : "Quick",
+      "hash" : "cc03098d3d6addae741fb4a6810117b907861e5bef4d60a8af23d4d618ac2804"
+    }
+  ],
+  "commitish" : "v1.2.0",
+  "iOS" : [
+    {
+      "name" : "Quick",
+      "hash" : "8e7caa9031bec2541a526980af6b8efbfe97aee3355771fcc287f84b45a04235"
+    }
+  ]
+}
