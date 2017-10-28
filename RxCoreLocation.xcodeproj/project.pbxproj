@@ -41,6 +41,15 @@
 		C48D55531FA4FC0500FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */; };
 		C48D55561FA4FC1B00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55541FA4FC1B00FF1BF0 /* RxSwift.framework */; };
 		C48D55571FA4FC1B00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */; };
+		C48D556E1FA4FFAD00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */; };
+		C48D556F1FA4FFAD00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */; };
+		C48D55711FA4FFAD00FF1BF0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55701FA4FFAD00FF1BF0 /* RxTest.framework */; };
+		C48D55761FA5003000FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55501FA4FC0500FF1BF0 /* RxCocoa.framework */; };
+		C48D55771FA5003000FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */; };
+		C48D55791FA5003000FF1BF0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55781FA5003000FF1BF0 /* RxTest.framework */; };
+		C48D557A1FA5016A00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
+		C48D557B1FA5016A00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */; };
+		C48D557C1FA5016A00FF1BF0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55741FA5000C00FF1BF0 /* RxTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +144,9 @@
 		C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/tvOS/RxSwift.framework; sourceTree = "<group>"; };
 		C48D55541FA4FC1B00FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
 		C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
+		C48D55701FA4FFAD00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		C48D55741FA5000C00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
+		C48D55781FA5003000FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +190,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48D55711FA4FFAD00FF1BF0 /* RxTest.framework in Frameworks */,
+				C48D556E1FA4FFAD00FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D556F1FA4FFAD00FF1BF0 /* RxSwift.framework in Frameworks */,
 				35B742311F82A5EC00829B21 /* Nimble.framework in Frameworks */,
 				35B742321F82A5EC00829B21 /* Quick.framework in Frameworks */,
 				3549BB661DA38ADB00C63030 /* RxCoreLocation.framework in Frameworks */,
@@ -191,6 +206,9 @@
 				354AD5861F8A659800B18FAE /* Quick.framework in Frameworks */,
 				354AD5871F8A659800B18FAE /* Nimble.framework in Frameworks */,
 				3549BB751DA38AEF00C63030 /* RxCoreLocation.framework in Frameworks */,
+				C48D55791FA5003000FF1BF0 /* RxTest.framework in Frameworks */,
+				C48D55761FA5003000FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D55771FA5003000FF1BF0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +219,9 @@
 				35B742381F82A62900829B21 /* Nimble.framework in Frameworks */,
 				35B742391F82A62900829B21 /* Quick.framework in Frameworks */,
 				3549BB841DA38B0000C63030 /* RxCoreLocation.framework in Frameworks */,
+				C48D557A1FA5016A00FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D557B1FA5016A00FF1BF0 /* RxSwift.framework in Frameworks */,
+				C48D557C1FA5016A00FF1BF0 /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +300,9 @@
 		357D954B1DA3F2B400AEC55F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C48D55701FA4FFAD00FF1BF0 /* RxTest.framework */,
+				C48D55741FA5000C00FF1BF0 /* RxTest.framework */,
+				C48D55781FA5003000FF1BF0 /* RxTest.framework */,
 				C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */,
 				C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */,
 				C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */,
@@ -993,7 +1017,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1011,7 +1035,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1028,7 +1052,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/tvOS";
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1048,7 +1072,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/tvOS";
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1068,7 +1092,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1089,7 +1113,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = rx.community.RxCoreLocationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
