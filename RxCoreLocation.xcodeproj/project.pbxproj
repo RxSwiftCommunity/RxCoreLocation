@@ -50,6 +50,10 @@
 		C48D557A1FA5016A00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
 		C48D557B1FA5016A00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */; };
 		C48D557C1FA5016A00FF1BF0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55741FA5000C00FF1BF0 /* RxTest.framework */; };
+		C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
+		C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
+		C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
+		C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +151,7 @@
 		C48D55701FA4FFAD00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		C48D55741FA5000C00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		C48D55781FA5003000FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
+		C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSelectors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */,
+				C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B7427F1F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
