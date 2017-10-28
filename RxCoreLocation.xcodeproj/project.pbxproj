@@ -33,6 +33,14 @@
 		35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
 		35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
 		35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
+		C48D554A1FA4FBD400FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */; };
+		C48D554B1FA4FBD400FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */; };
+		C48D554E1FA4FBEB00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
+		C48D554F1FA4FBEB00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */; };
+		C48D55521FA4FC0500FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55501FA4FC0500FF1BF0 /* RxCocoa.framework */; };
+		C48D55531FA4FC0500FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */; };
+		C48D55561FA4FC1B00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55541FA4FC1B00FF1BF0 /* RxSwift.framework */; };
+		C48D55571FA4FC1B00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +127,14 @@
 		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCoreLocation.swift; sourceTree = "<group>"; };
+		C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
+		C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		C48D55501FA4FC0500FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/tvOS/RxCocoa.framework; sourceTree = "<group>"; };
+		C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/tvOS/RxSwift.framework; sourceTree = "<group>"; };
+		C48D55541FA4FC1B00FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
+		C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48D554A1FA4FBD400FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D554B1FA4FBD400FF1BF0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48D55561FA4FC1B00FF1BF0 /* RxSwift.framework in Frameworks */,
+				C48D55571FA4FC1B00FF1BF0 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48D554E1FA4FBEB00FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D554F1FA4FBEB00FF1BF0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +169,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48D55521FA4FC0500FF1BF0 /* RxCocoa.framework in Frameworks */,
+				C48D55531FA4FC0500FF1BF0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +279,14 @@
 		357D954B1DA3F2B400AEC55F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */,
+				C48D55551FA4FC1B00FF1BF0 /* RxCocoa.framework */,
+				C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */,
+				C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */,
+				C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */,
+				C48D55501FA4FC0500FF1BF0 /* RxCocoa.framework */,
+				C48D55511FA4FC0500FF1BF0 /* RxSwift.framework */,
+				C48D55541FA4FC1B00FF1BF0 /* RxSwift.framework */,
 				35B742341F82A61D00829B21 /* Nimble.framework */,
 				35B742351F82A61E00829B21 /* Quick.framework */,
 				35B7422D1F82A5DF00829B21 /* Nimble.framework */,
@@ -757,7 +789,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -777,7 +812,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -797,6 +835,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -820,6 +862,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -842,6 +888,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -865,6 +915,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -886,6 +940,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -908,6 +966,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
