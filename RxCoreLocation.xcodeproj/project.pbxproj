@@ -66,6 +66,10 @@
 		C4B8B20C1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */; };
 		C4B8B20D1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */; };
 		C4B8B20E1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */; };
+		C4B8B2101FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
+		C4B8B2111FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
+		C4B8B2121FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
+		C4B8B2131FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +171,7 @@
 		C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEventTypealias.swift; sourceTree = "<group>"; };
 		C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManagerDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		C4B8B20F1FA654A5005E0A69 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +322,7 @@
 				C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */,
 				C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */,
 				C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */,
+				C4B8B20F1FA654A5005E0A69 /* Helpers.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B8B2011FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
+				C4B8B2101FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B7427F1F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20B1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
@@ -652,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B8B2041FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
+				C4B8B2131FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20E1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
@@ -664,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B8B2021FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
+				C4B8B2111FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20C1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
@@ -676,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B8B2031FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
+				C4B8B2121FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20D1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
