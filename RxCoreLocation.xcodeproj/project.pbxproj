@@ -54,6 +54,10 @@
 		C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
 		C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
 		C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
+		C4B8B2011FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */; };
+		C4B8B2021FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */; };
+		C4B8B2031FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */; };
+		C4B8B2041FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +156,7 @@
 		C48D55741FA5000C00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		C48D55781FA5003000FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
 		C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSelectors.swift; sourceTree = "<group>"; };
+		C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEventTypealias.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +304,7 @@
 			children = (
 				35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */,
 				C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */,
+				C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B2011FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B7427F1F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 			);
@@ -630,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B2041FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 			);
@@ -639,6 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B2021FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 			);
@@ -648,6 +657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B8B2031FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 			);
