@@ -19,5 +19,12 @@ extension Reactive where Base: CLLocationManager {
     public var delegate: RxCLLocationManagerDelegate {
         return RxCLLocationManagerDelegateProxy.proxy(for: base)
     }
-    
+
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)`
+    public var didChangeAuthorization: ControlEvent<CLAuthorizationEvent> {
+        let source: Observable<CLAuthorizationEvent> = delegate
+            .methodInvoked(.didChangeAuthorization)
+            .map(clAuthorizationStatus)
+        return ControlEvent(events: source)
+    }
 }
