@@ -90,4 +90,20 @@ extension Reactive where Base: CLLocationManager {
         let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didResumeLocationUpdates).mapTo(())
         return ControlEvent(events: source)
     }
+    
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion)`
+    public var didRangeBeacons: ControlEvent<CLBeaconsEvent> {
+        let source: Observable<CLBeaconsEvent> = delegate
+            .methodInvoked(.didRangeBeacons)
+            .map(clBeaconsEvent)
+        return ControlEvent(events: source)
+    }
+    
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error)`
+    public var didErrorRangingBeacons: ControlEvent<CLBeaconsErrorEvent> {
+        let source: Observable<CLBeaconsErrorEvent> = delegate
+            .methodInvoked(.rangingBeaconsDidFailForRegion)
+            .map(clBeaconsErrorEvent)
+        return ControlEvent(events: source)
+    }
 }
