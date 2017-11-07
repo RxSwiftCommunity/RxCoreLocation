@@ -50,6 +50,13 @@ extension Reactive where Base: CLLocationManager {
         return ControlEvent(events: source)
     }
     
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion)`
+    public var didDetermineState: ControlEvent<CLRegionStateEvent> {
+        let source: Observable<CLRegionStateEvent> = delegate
+            .methodInvoked(.didDetermineState)
+            .map(clRegionStateEvent)
+        return ControlEvent(events: source)
+    }
     
     /// Reactive wrapper for: CLRegionEvent
     /// 1. `func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion)`
