@@ -114,4 +114,12 @@ extension Reactive where Base: CLLocationManager {
             .map(clVisitEvent)
         return ControlEvent(events: source)
     }
+    
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading)`
+    public var didUpdateHeading: ControlEvent<CLHeadingEvent> {
+        let source: Observable<CLHeadingEvent> = delegate
+            .methodInvoked(.didUpdateHeading)
+            .map(clHeadingEvent)
+        return ControlEvent(events: source)
+    }
 }
