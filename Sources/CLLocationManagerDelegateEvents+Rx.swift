@@ -49,4 +49,26 @@ extension Reactive where Base: CLLocationManager {
         let source = Observable.of(generalError, updatesError).merge()
         return ControlEvent(events: source)
     }
+    
+    
+    /// Reactive wrapper for: CLRegionEvent
+    /// 1. `func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion)`
+    /// 2. `func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion)`
+    /// 3. `func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion)`
+    public var didReceiveRegion: ControlEvent<CLRegionEvent> {
+        let enterRegion: Observable<CLRegionEvent> = delegate
+            .methodInvoked(.didEnterRegion)
+            .map { try clRegionEvent($0, .enter) }
+        
+        let exitRegion: Observable<CLRegionEvent> = delegate
+            .methodInvoked(.didExitRegion)
+            .map { try clRegionEvent($0, .exit) }
+        
+        let monitoringRegion: Observable<CLRegionEvent> = delegate
+            .methodInvoked(.didStartMonitoring)
+            .map { try clRegionEvent($0, .monitoring) }
+        
+        let source = Observable.of(enterRegion, exitRegion, monitoringRegion).merge()
+        return ControlEvent(events: source)
+    }
 }
