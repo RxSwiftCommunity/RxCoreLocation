@@ -79,6 +79,14 @@ extension Reactive where Base: CLLocationManager {
         return ControlEvent(events: source)
     }
     
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error)`
+    public var didErrorMonitoringRegion: ControlEvent<CLRegionErrorEvent> {
+        let source: Observable<CLRegionErrorEvent> = delegate
+            .methodInvoked(.didFailMonitoring)
+            .map(clRegionErrorEvent)
+        return ControlEvent(events: source)
+    }
+    
     /// Reactive wrapper for `func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager)`
     public var didPause: ControlEvent<CLVoidEvent> {
         let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didPauseLocationUpdates).mapTo(())
