@@ -27,4 +27,12 @@ extension Reactive where Base: CLLocationManager {
             .map(clAuthorizationStatus)
         return ControlEvent(events: source)
     }
+    
+    /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])`
+    public var didUpdateLocations: ControlEvent<CLLocationsEvent> {
+        let source: Observable<CLLocationsEvent> = delegate
+            .methodInvoked(.didUpdateLocations)
+            .map(clLocationsEvent)
+        return ControlEvent(events: source)
+    }
 }
