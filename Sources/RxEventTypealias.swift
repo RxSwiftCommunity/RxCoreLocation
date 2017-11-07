@@ -56,7 +56,7 @@ public typealias CLBeaconsErrorEvent = (manager: CLLocationManager, region: CLBe
 ///    2. Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
 ///    3. Invoked when a monitoring for a region started successfully
 ///    CLLocationManager instance with a non-nil delegate that implements this method.
-public typealias CLRegionEvent = (manager: CLLocationManager, region: CLRegion, state: CLRegionState)
+public typealias CLRegionEvent = (manager: CLLocationManager, region: CLRegion, state: CLRegionEventState)
 ///  locationManager:didFailWithError:
 ///  locationManager:didFinishDeferredUpdatesWithError:
 ///
@@ -83,8 +83,8 @@ public typealias CLVoidEvent = Swift.Void
 ///    a location, if visit monitoring is currently started (possibly from a
 ///    prior launch).
 public typealias CLVisitEvent = (manager: CLLocationManager, visit: CLVisit)
-/// CLRegionState:
-public enum CLRegionState {
+/// CLRegionEventState:
+public enum CLRegionEventState {
     case enter, exit, monitoring
 }
 

@@ -36,7 +36,7 @@ func clHeadingEvent(_ args: [Any]) throws -> CLHeadingEvent {
     return (manager, heading)
 }
 
-func clRegionEvent(_ args: [Any], _ state: CLRegionState) throws -> CLRegionEvent {
+func clRegionEvent(_ args: [Any], _ state: CLRegionEventState) throws -> CLRegionEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let region = try castOrThrow(CLRegion.self, args[1])
     return (manager, region, state)
