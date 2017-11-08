@@ -29,10 +29,6 @@
 		35B742371F82A61E00829B21 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742351F82A61E00829B21 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B742381F82A62900829B21 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742341F82A61D00829B21 /* Nimble.framework */; };
 		35B742391F82A62900829B21 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742351F82A61E00829B21 /* Quick.framework */; };
-		35B7427F1F82A82F00829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
-		35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
-		35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
-		35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */; };
 		C48D554A1FA4FBD400FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */; };
 		C48D554B1FA4FBD400FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */; };
 		C48D554E1FA4FBEB00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
@@ -70,6 +66,10 @@
 		C4B8B2111FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
 		C4B8B2121FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
 		C4B8B2131FA654A5005E0A69 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B20F1FA654A5005E0A69 /* Helpers.swift */; };
+		C4BEE2641FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */; };
+		C4BEE2651FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */; };
+		C4BEE2661FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */; };
+		C4BEE2671FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,7 +155,6 @@
 		35B7422E1F82A5E000829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCoreLocation.swift; sourceTree = "<group>"; };
 		C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManagerDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4B8B20F1FA654A5005E0A69 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManagerEvents+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,11 +317,11 @@
 		3549BB5C1DA38AA500C63030 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				35B7427E1F82A82F00829B21 /* RxCoreLocation.swift */,
 				C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */,
 				C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */,
 				C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */,
 				C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */,
+				C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */,
 				C4B8B20F1FA654A5005E0A69 /* Helpers.swift */,
 			);
 			name = Core;
@@ -648,9 +648,9 @@
 				C4B8B2011FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B2101FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
-				35B7427F1F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20B1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2061FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				C4BEE2641FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,9 +661,9 @@
 				C4B8B2041FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B2131FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
-				35B742821F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20E1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2091FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				C4BEE2671FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,9 +674,9 @@
 				C4B8B2021FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B2111FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
-				35B742801F82A82F00829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20C1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2071FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				C4BEE2651FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,9 +687,9 @@
 				C4B8B2031FA5C9D0005E0A69 /* RxEventTypealias.swift in Sources */,
 				C4B8B2121FA654A5005E0A69 /* Helpers.swift in Sources */,
 				C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
-				35B742811F82A83000829B21 /* RxCoreLocation.swift in Sources */,
 				C4B8B20D1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2081FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				C4BEE2661FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
