@@ -46,6 +46,12 @@
 		C48D557A1FA5016A00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
 		C48D557B1FA5016A00FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554D1FA4FBEB00FF1BF0 /* RxSwift.framework */; };
 		C48D557C1FA5016A00FF1BF0 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55741FA5000C00FF1BF0 /* RxTest.framework */; };
+		C4B87A8E1FB476EC00E250BD /* RxTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */; };
+		C4B87A8F1FB476EC00E250BD /* RxTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */; };
+		C4B87A901FB476EC00E250BD /* RxTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */; };
+		C4B87A921FB496DE00E250BD /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A911FB496DE00E250BD /* HasEventsBehavior.swift */; };
+		C4B87A931FB496DE00E250BD /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A911FB496DE00E250BD /* HasEventsBehavior.swift */; };
+		C4B87A941FB496DE00E250BD /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B87A911FB496DE00E250BD /* HasEventsBehavior.swift */; };
 		C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
 		C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
 		C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */; };
@@ -166,6 +172,8 @@
 		C48D55701FA4FFAD00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		C48D55741FA5000C00FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		C48D55781FA5003000FF1BF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
+		C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTest+Extension.swift"; sourceTree = "<group>"; };
+		C4B87A911FB496DE00E250BD /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
 		C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSelectors.swift; sourceTree = "<group>"; };
 		C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEventTypealias.swift; sourceTree = "<group>"; };
 		C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
@@ -290,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				3549BB8A1DA38C0A00C63030 /* RxCoreLocationSpec.swift */,
+				C4B87A911FB496DE00E250BD /* HasEventsBehavior.swift */,
+				C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */,
 				3549BB5B1DA38A8C00C63030 /* Supporting Files */,
 			);
 			path = Tests;
@@ -697,7 +707,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B87A921FB496DE00E250BD /* HasEventsBehavior.swift in Sources */,
 				3549BB8B1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
+				C4B87A8E1FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +717,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B87A941FB496DE00E250BD /* HasEventsBehavior.swift in Sources */,
 				3549BB8D1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
+				C4B87A901FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +727,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B87A931FB496DE00E250BD /* HasEventsBehavior.swift in Sources */,
 				3549BB8C1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
+				C4B87A8F1FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
