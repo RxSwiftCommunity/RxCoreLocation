@@ -1,8 +1,8 @@
 //
-//  HasEventsBehavior.swift
+//  ForwardsEventsBehavior.swift
 //  RxCoreLocation
 //
-//  Created by Bob Obi on 09.11.17.
+//  Created by Bob Obi on 10.11.17.
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ import CoreLocation
 @testable import RxCoreLocation
 
 
-struct HasEventsBehaviorContext {
+struct ForwardsEventsBehaviorContext {
     let sut: CLLocationManager
     let scheduler: TestScheduler
     let selector: Selector
@@ -30,8 +30,8 @@ struct HasEventsBehaviorContext {
     }
 }
 
-class HasEventsBehavior: Quick.Behavior<HasEventsBehaviorContext> {
-    override class func spec(_ context: @escaping () -> HasEventsBehaviorContext) {
+class ForwardsEventsBehavior: Quick.Behavior<ForwardsEventsBehaviorContext> {
+    override class func spec(_ context: @escaping () -> ForwardsEventsBehaviorContext) {
         
         var sut: CLLocationManager!
         var scheduler: TestScheduler!
@@ -71,5 +71,6 @@ class HasEventsBehavior: Quick.Behavior<HasEventsBehaviorContext> {
                 }
             }
         }
-    }   
+    }
 }
+
