@@ -32,6 +32,9 @@
 		C44FC2861FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */; };
 		C44FC2871FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */; };
 		C44FC2881FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */; };
+		C44FC28A1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */; };
+		C44FC28B1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */; };
+		C44FC28C1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */; };
 		C48D554A1FA4FBD400FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */; };
 		C48D554B1FA4FBD400FF1BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */; };
 		C48D554E1FA4FBEB00FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */; };
@@ -162,6 +165,7 @@
 		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
+		C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
 		C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		C48D55491FA4FBD400FF1BF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		C48D554C1FA4FBEB00FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 			children = (
 				3549BB8A1DA38C0A00C63030 /* RxCoreLocationSpec.swift */,
 				C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */,
+				C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */,
 				C4B87A8D1FB476EC00E250BD /* RxTest+Extension.swift */,
 				3549BB5B1DA38A8C00C63030 /* Supporting Files */,
 			);
@@ -710,6 +715,7 @@
 				C44FC2861FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */,
 				3549BB8B1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
 				C4B87A8E1FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
+				C44FC28A1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +726,7 @@
 				C44FC2881FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */,
 				3549BB8D1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
 				C4B87A901FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
+				C44FC28C1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +737,7 @@
 				C44FC2871FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */,
 				3549BB8C1DA38C0A00C63030 /* RxCoreLocationSpec.swift in Sources */,
 				C4B87A8F1FB476EC00E250BD /* RxTest+Extension.swift in Sources */,
+				C44FC28B1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

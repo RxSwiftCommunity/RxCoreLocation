@@ -5,9 +5,6 @@
       location = "group:RxCoreLocation.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RxCoreLocation.playground">
-   </FileRef>
-   <FileRef
       location = "group:scripts">
    </FileRef>
    <FileRef
@@ -33,5 +30,8 @@
    </FileRef>
    <FileRef
       location = "group:Readme.md">
+   </FileRef>
+   <FileRef
+      location = "group:RxCoreLocationExample.xcodeproj">
    </FileRef>
 </Workspace>
