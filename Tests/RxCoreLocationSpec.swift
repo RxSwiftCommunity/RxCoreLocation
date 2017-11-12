@@ -120,6 +120,82 @@ class RxCoreLocationSpec: QuickSpec {
                 sut.delegate?.locationManager!(sut, rangingBeaconsDidFailFor: beaconRegion, withError: AnyError.beaconError)
             }
         }
+        
+        itBehavesLike(HasEventsBehavior<CLActivityType?>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.activityType)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLLocationDistance>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.distanceFilter)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLLocationAccuracy>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.desiredAccuracy)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.pausesLocationUpdatesAutomatically)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.allowsBackgroundLocationUpdates)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.showsBackgroundLocationIndicator)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLLocation?>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.location)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLLocationDegrees>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.headingFilter)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLDeviceOrientation?>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.headingOrientation)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLHeading?>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.heading)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLLocationDistance>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.maximumRegionMonitoringDistance)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Set<CLRegion>>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.monitoredRegions)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Set<CLRegion>>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.rangedRegions)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.isEnabled)
+        }
+        
+        itBehavesLike(HasEventsBehavior<CLAuthorizationStatus>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.status)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.isDeferred)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.hasChanges)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.isHeadingAvailable)
+        }
+        
+        itBehavesLike(HasEventsBehavior<Bool>.self) {
+            HasEventsBehaviorContext(scheduler, sut.rx.isRangingAvailable)
+        }
     }
 }
 
