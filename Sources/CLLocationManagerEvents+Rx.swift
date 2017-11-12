@@ -74,57 +74,91 @@ extension Reactive where Base: CLLocationManager {
         return self.observe(Set<CLRegion>.self, "rangedRegions")
             .map { $0 ?? [] }
     }
+    
     /// Reactive Observable for `locationServicesEnabled`
-    public static var isEnabled: Observable<Bool> {
+    public var isEnabled: Observable<Bool> {
+        return CLLocationManager.__isEnabled.share()
+    }
+    
+    /// Reactive Observable for `authorizationStatus`
+    public var status: Observable<CLAuthorizationStatus> {
+        return CLLocationManager.__status.share()
+    }
+    
+    /// Reactive Observable fo `deferredLocationUpdatesAvailable`
+    public var isDeferred: Observable<Bool> {
+        return CLLocationManager.__isDeferred.share()
+    }
+    
+    /// Reactive Observable fo `significantLocationChangeMonitoringAvailable`
+    public var hasChanges: Observable<Bool> {
+        return CLLocationManager.__hasChanges.share()
+    }
+    
+    /// Reactive Observable fo `headingAvailable`
+    public var isHeadingAvailable: Observable<Bool> {
+        return CLLocationManager.__isHeadingAvailable.share()
+    }
+    
+    /// Reactive Observable fo `isRangingAvailable`
+    public var isRangingAvailable: Observable<Bool> {
+        return CLLocationManager.__isRangingAvailable.share()
+    }
+}
+
+extension CLLocationManager {
+    /// Reactive Observable for `locationServicesEnabled`
+    internal static var __isEnabled: Observable<Bool> {
         return Observable.create { observer in
-            if CLLocationManager.locationServicesEnabled() {
-                observer.on(.next(true))
-                observer.onCompleted()
-            } else {
-                observer.on(.next(false))
+            observer.on(.next(CLLocationManager.locationServicesEnabled()))
+            return Disposables.create {
                 observer.onCompleted()
             }
-            return Disposables.create()
         }
     }
     /// Reactive Observable for `authorizationStatus`
-    public static var status: Observable<CLAuthorizationStatus> {
+    internal static var __status: Observable<CLAuthorizationStatus> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.authorizationStatus()))
-            observer.onCompleted()
-            return Disposables.create()
+            return Disposables.create {
+                observer.onCompleted()
+            }
         }
     }
     /// Reactive Observable fo `deferredLocationUpdatesAvailable`
-    public static var isDeferred: Observable<Bool> {
+    internal static var __isDeferred: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.deferredLocationUpdatesAvailable()))
-            observer.onCompleted()
-            return Disposables.create()
+            return Disposables.create {
+                observer.onCompleted()
+            }
         }
     }
     /// Reactive Observable fo `significantLocationChangeMonitoringAvailable`
-    public static var hasChanges: Observable<Bool> {
+    internal static var __hasChanges: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.significantLocationChangeMonitoringAvailable()))
-            observer.onCompleted()
-            return Disposables.create()
+            return Disposables.create {
+                observer.onCompleted()
+            }
         }
     }
     /// Reactive Observable fo `headingAvailable`
-    public static var isHeadingAvailable: Observable<Bool> {
+    internal static var __isHeadingAvailable: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.headingAvailable()))
-            observer.onCompleted()
-            return Disposables.create()
+            return Disposables.create {
+                observer.onCompleted()
+            }
         }
     }
     /// Reactive Observable fo `isRangingAvailable`
-    public static var isRangingAvailable: Observable<Bool> {
+    internal static var __isRangingAvailable: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.isRangingAvailable()))
-            observer.onCompleted()
-            return Disposables.create()
+            return Disposables.create {
+                observer.onCompleted()
+            }
         }
     }
 }
