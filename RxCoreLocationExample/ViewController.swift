@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         manager.rx.didUpdateLocations.debug("didUpdateLocations").subscribe(onNext: { _ in }).disposed(by: bag)
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        //manager.rx.location.debug("location").subscribe(onNext: { _ in }).disposed(by: bag)
+        manager.rx.location.debug("location").subscribe(onNext: { _ in }).disposed(by: bag)
     }
 }
 

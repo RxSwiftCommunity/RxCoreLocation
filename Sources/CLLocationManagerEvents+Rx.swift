@@ -44,7 +44,9 @@ extension Reactive where Base: CLLocationManager {
     }
     /// Reactive Observable for `location`
     public var location: Observable<CLLocation?> {
-        return self.observe(CLLocation.self, "location")
+        let updatedLocation = self.didUpdateLocations.map { $1.last }
+        let location =  self.observe(CLLocation.self, "location")
+        return Observable.of(location, updatedLocation).merge()
     }
     /// Reactive Observable for `headingFilter`
     public var headingFilter: Observable<CLLocationDegrees> {
