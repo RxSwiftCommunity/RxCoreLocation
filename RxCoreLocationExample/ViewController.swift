@@ -20,8 +20,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        manager.rx.activityType.debug("hehehe").subscribe(onNext: {_ in}).disposed(by: bag)
+        manager.rx.activityType.debug("activityType").subscribe(onNext: {_ in}).disposed(by: bag)
+        manager.rx.isEnabled.debug("isEnabled").subscribe(onNext: { _ in }).disposed(by: bag)
+        manager.rx.didUpdateLocations.debug("didUpdateLocations").subscribe(onNext: { _ in }).disposed(by: bag)
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        //manager.rx.location.debug("location").subscribe(onNext: { _ in }).disposed(by: bag)
     }
 }
 

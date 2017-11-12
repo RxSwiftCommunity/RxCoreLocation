@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C47207A01FB8ED5400197310 /* berlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C472079F1FB8ED5400197310 /* berlin.gpx */; };
 		C4A8A3EA1FB5B4F600356A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8A3E91FB5B4F600356A42 /* AppDelegate.swift */; };
 		C4A8A3EC1FB5B4F600356A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8A3EB1FB5B4F600356A42 /* ViewController.swift */; };
 		C4A8A3EF1FB5B4F600356A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A8A3ED1FB5B4F600356A42 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C472079F1FB8ED5400197310 /* berlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = berlin.gpx; sourceTree = "<group>"; };
 		C4A8A3E61FB5B4F600356A42 /* RxCoreLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCoreLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A8A3E91FB5B4F600356A42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A8A3EB1FB5B4F600356A42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		C4A8A3E81FB5B4F600356A42 /* RxCoreLocationExample */ = {
 			isa = PBXGroup;
 			children = (
+				C472079F1FB8ED5400197310 /* berlin.gpx */,
 				C4A8A3E91FB5B4F600356A42 /* AppDelegate.swift */,
 				C4A8A3EB1FB5B4F600356A42 /* ViewController.swift */,
 				C4A8A3ED1FB5B4F600356A42 /* Main.storyboard */,
@@ -251,6 +254,7 @@
 				C4A8A3F41FB5B4F600356A42 /* LaunchScreen.storyboard in Resources */,
 				C4A8A3F11FB5B4F600356A42 /* Assets.xcassets in Resources */,
 				C4A8A3EF1FB5B4F600356A42 /* Main.storyboard in Resources */,
+				C47207A01FB8ED5400197310 /* berlin.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
