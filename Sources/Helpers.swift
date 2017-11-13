@@ -47,8 +47,11 @@ func clRegionEvent(_ args: [Any], _ state: CLRegionEventState) throws -> CLRegio
 
 func clRegionStateEvent(_ args: [Any]) throws -> CLRegionStateEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
-    let state = try castOrThrow(CLRegionState.self, args[1])
     let region = try castOrThrow(CLRegion.self, args[2])
+    guard let rawValue = args[1] as? Int,
+        let state = CLRegionState.init(rawValue: rawValue) else {
+        throw RxCocoaError.castingError(object: args[1], targetType: CLRegionState.self)
+    }
     return (manager, state, region)
 }
 
