@@ -57,10 +57,12 @@ extension Reactive where Base: CLLocationManager {
     public var headingOrientation: Observable<CLDeviceOrientation?> {
         return self.observe(CLDeviceOrientation.self, "headingOrientation")
     }
+     #if os(iOS) || os(macOS)
     /// Reactive Observable for `heading`
     public var heading: Observable<CLHeading?> {
         return self.observe(CLHeading.self, "heading")
     }
+    #endif
     /// Reactive Observable for `maximumRegionMonitoringDistance`
     public var maximumRegionMonitoringDistance: Observable<CLLocationDistance> {
         return self.observe(CLLocationDistance.self, "maximumRegionMonitoringDistance")
@@ -87,6 +89,7 @@ extension Reactive where Base: CLLocationManager {
         return CLLocationManager.__status.share()
     }
     
+     #if os(iOS) || os(macOS)
     /// Reactive Observable fo `deferredLocationUpdatesAvailable`
     public var isDeferred: Observable<Bool> {
         return CLLocationManager.__isDeferred.share()
@@ -101,11 +104,13 @@ extension Reactive where Base: CLLocationManager {
     public var isHeadingAvailable: Observable<Bool> {
         return CLLocationManager.__isHeadingAvailable.share()
     }
-    
+    #endif
     /// Reactive Observable fo `isRangingAvailable`
+    #if os(iOS)
     public var isRangingAvailable: Observable<Bool> {
         return CLLocationManager.__isRangingAvailable.share()
     }
+    #endif
 }
 
 extension CLLocationManager {
@@ -128,6 +133,7 @@ extension CLLocationManager {
         }
     }
     /// Reactive Observable fo `deferredLocationUpdatesAvailable`
+     #if os(iOS) || os(macOS)
     internal static var __isDeferred: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.deferredLocationUpdatesAvailable()))
@@ -154,7 +160,10 @@ extension CLLocationManager {
             }
         }
     }
+    #endif
+    
     /// Reactive Observable fo `isRangingAvailable`
+    #if os(iOS)
     internal static var __isRangingAvailable: Observable<Bool> {
         return Observable.create { observer in
             observer.on(.next(CLLocationManager.isRangingAvailable()))
@@ -163,6 +172,7 @@ extension CLLocationManager {
             }
         }
     }
+    #endif
 }
 
 

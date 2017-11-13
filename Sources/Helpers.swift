@@ -32,19 +32,19 @@ func clLocationsEvent(_ args: [Any]) throws -> CLLocationsEvent {
     let locations = try castOrThrow(Array<CLLocation>.self, args[1])
     return (manager, locations)
 }
-
+ #if os(iOS) || os(macOS)
 func clHeadingEvent(_ args: [Any]) throws -> CLHeadingEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let heading = try castOrThrow(CLHeading.self, args[1])
     return (manager, heading)
 }
-
+ #endif
 func clRegionEvent(_ args: [Any], _ state: CLRegionEventState) throws -> CLRegionEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let region = try castOrThrow(CLRegion.self, args[1])
     return (manager, region, state)
 }
-
+ #if os(iOS) || os(macOS)
 func clRegionStateEvent(_ args: [Any]) throws -> CLRegionStateEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let region = try castOrThrow(CLRegion.self, args[2])
@@ -54,24 +54,26 @@ func clRegionStateEvent(_ args: [Any]) throws -> CLRegionStateEvent {
     }
     return (manager, state, region)
 }
+#endif
 
+func clErrorEvent(_ args: [Any]) throws ->  CLErrorEvent {
+    let manager = try castOrThrow(CLLocationManager.self, args[0])
+    let error = try castOrThrow(Error.self, args[1])
+    return (manager, error)
+}
+
+#if os(iOS)
 func clBeaconsEvent(_ args: [Any]) throws -> CLBeaconsEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let beacons = try castOrThrow(Array<CLBeacon>.self, args[1])
     let region = try castOrThrow(CLBeaconRegion.self, args[2])
     return (manager, beacons, region)
 }
-
+    
 func clVisitEvent(_ args: [Any]) throws -> CLVisitEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let visit = try castOrThrow(CLVisit.self, args[1])
     return (manager, visit)
-}
-
-func clErrorEvent(_ args: [Any]) throws ->  CLErrorEvent {
-    let manager = try castOrThrow(CLLocationManager.self, args[0])
-    let error = try castOrThrow(Error.self, args[1])
-    return (manager, error)
 }
 
 func clBeaconsErrorEvent(_ args: [Any]) throws -> CLBeaconsErrorEvent {
@@ -80,6 +82,7 @@ func clBeaconsErrorEvent(_ args: [Any]) throws -> CLBeaconsErrorEvent {
     let error = try castOrThrow(Error.self, args[2])
     return (manager, beaconRegion, error)
 }
+#endif
 
 func clRegionErrorEvent(_ args: [Any]) throws -> CLRegionErrorEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])

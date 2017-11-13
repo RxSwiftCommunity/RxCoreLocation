@@ -39,6 +39,7 @@ extension Reactive where Base: CLLocationManager {
     /// Reactive wrapper for: CLErrorEvent
     /// 1. `func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)`
     /// 2. `func locationManager(_ manager: CLLocationManager, didFinishDeferredUpdatesWithError error: Error?)`
+     #if os(iOS) || os(macOS)
     public var didError: ControlEvent<CLErrorEvent> {
         let generalError: Observable<CLErrorEvent> = delegate
             .methodInvoked(.didFailWithError)
@@ -51,6 +52,7 @@ extension Reactive where Base: CLLocationManager {
     }
     
     /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion)`
+    @available(iOS 9.3, macOS 10.11, *)
     public var didDetermineState: ControlEvent<CLRegionStateEvent> {
         let source: Observable<CLRegionStateEvent> = delegate
             .methodInvoked(.didDetermineState)
@@ -62,6 +64,7 @@ extension Reactive where Base: CLLocationManager {
     /// 1. `func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion)`
     /// 2. `func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion)`
     /// 3. `func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion)`
+    @available(iOS 9.3, macOS 10.11, *)
     public var didReceiveRegion: ControlEvent<CLRegionEvent> {
         let enterRegion: Observable<CLRegionEvent> = delegate
             .methodInvoked(.didEnterRegion)
@@ -80,14 +83,16 @@ extension Reactive where Base: CLLocationManager {
     }
     
     /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error)`
+    @available(iOS 9.3, macOS 10.11, *)
     public var didErrorMonitoringRegion: ControlEvent<CLRegionErrorEvent> {
         let source: Observable<CLRegionErrorEvent> = delegate
             .methodInvoked(.didFailMonitoring)
             .map(clRegionErrorEvent)
         return ControlEvent(events: source)
     }
-    
+    #endif
     /// Reactive wrapper for `func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager)`
+    #if os(iOS)
     public var didPause: ControlEvent<CLVoidEvent> {
         let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didPauseLocationUpdates).mapTo(())
         return ControlEvent(events: source)
@@ -130,4 +135,5 @@ extension Reactive where Base: CLLocationManager {
             .map(clHeadingEvent)
         return ControlEvent(events: source)
     }
+    #endif
 }

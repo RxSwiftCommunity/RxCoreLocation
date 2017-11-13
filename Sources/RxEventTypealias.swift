@@ -26,6 +26,7 @@ public typealias CLLocationsEvent = (manager: CLLocationManager, locations: [CLL
 ///
 ///  Discussion:
 ///    Invoked when a new heading is available.
+ #if os(iOS) || os(macOS)
 public typealias CLHeadingEvent = (manager: CLLocationManager, newHeading: CLHeading)
 ///  locationManager:didDetermineState:forRegion:
 ///
@@ -33,6 +34,7 @@ public typealias CLHeadingEvent = (manager: CLLocationManager, newHeading: CLHea
 ///    Invoked when there's a state transition for a monitored region or in response to a request for state via a
 ///    a call to requestStateForRegion:.
 public typealias CLRegionStateEvent = (manager: CLLocationManager,  state: CLRegionState, region: CLRegion)
+#endif
 ///  locationManager:didRangeBeacons:inRegion:
 ///
 ///  Discussion:
@@ -41,12 +43,14 @@ public typealias CLRegionStateEvent = (manager: CLLocationManager,  state: CLReg
 ///    If beacons is empty, it may be assumed no beacons that match the specified region are nearby.
 ///    Similarly if a specific beacon no longer appears in beacons, it may be assumed the beacon is no longer received
 ///    by the device.
+#if os(iOS)
 public typealias CLBeaconsEvent = (manager: CLLocationManager, beacons: [CLBeacon], region: CLBeaconRegion)
 ///  locationManager:rangingBeaconsDidFailForRegion:withError:
 ///
 ///  Discussion:
 ///    Invoked when an error has occurred ranging beacons in a region. Error types are defined in "CLError.h".
 public typealias CLBeaconsErrorEvent = (manager: CLLocationManager, region: CLBeaconRegion, error: Error)
+#endif
 ///  locationManager:didEnterRegion:
 ///  locationManager:didExitRegion:
 ///  locationManager:didStartMonitoringForRegion:
@@ -82,7 +86,9 @@ public typealias CLVoidEvent = Swift.Void
 ///    Invoked when the CLLocationManager determines that the device has visited
 ///    a location, if visit monitoring is currently started (possibly from a
 ///    prior launch).
+#if os(iOS)
 public typealias CLVisitEvent = (manager: CLLocationManager, visit: CLVisit)
+#endif
 /// CLRegionEventState:
 public enum CLRegionEventState {
     case enter, exit, monitoring
