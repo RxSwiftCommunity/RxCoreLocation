@@ -20,7 +20,10 @@ func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
 
 func clAuthorizationStatus(_ args: [Any]) throws -> CLAuthorizationEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
-    let status = try castOrThrow(CLAuthorizationStatus.self, args[1])
+    guard let rawValue = args[1] as? Int32,
+        let status = CLAuthorizationStatus.init(rawValue: rawValue) else {
+        throw RxCocoaError.castingError(object: args[1], targetType: CLAuthorizationStatus.self)
+    }
     return (manager, status)
 }
 
