@@ -155,6 +155,33 @@ $ git submodule update --init --recursive
     })
     .disposed(by: bag)
 ```
+-  You can also subscribe for  a single `CLLocation`  update or for `[CLLocation]` 
+```swift
+
+    ///Subscribing for a single location events
+    manager.rx
+    .location
+    .subscribe(onNext: { location in
+        guard let location = location else { return }
+        print("altitude: \(location.altitude)")
+        print("latitude: \(location.coordinate.latitude)")
+        print("longitude: \(location.coordinate.longitude)")
+    })
+    .disposed(by: bag)
+    
+    ///Subscribing for an array of location events
+    manager.rx
+    .didUpdateLocations
+    .subscribe(onNext: { _, locations in
+        guard !locations.isEmpty,
+            let currentLocation = locations.last else { return }
+            print("altitude: \(currentLocation.altitude)")
+            print("latitude: \(currentLocation.coordinate.latitude)")
+            print("longitude: \(currentLocation.coordinate.longitude)")
+    })
+    .disposed(by: bag)
+
+```
 ## License
 
 RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxCoreLocation/RxCoreLocation/blob/master/LICENSE) for details.
