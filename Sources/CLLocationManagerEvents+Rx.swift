@@ -48,6 +48,20 @@ extension Reactive where Base: CLLocationManager {
         let location =  self.observe(CLLocation.self, "location")
         return Observable.of(location, updatedLocation).merge()
     }
+    
+    /// Private reactive wrapper for `CLGeocoder`.`reverseGeocodeLocation`
+    /// used to search for placemark
+    private func placemark(with location: CLLocation) -> Observable<CLPlacemark> {
+        return Observable.create { observer in
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location) { placemarks, _ in
+                observer.onNext(placemarks?.first)
+            }
+            return Disposables.create {
+                observer.onCompleted()
+            }
+        }.unwrap()
+    }
     /// Reactive Observable for `headingFilter`
     public var headingFilter: Observable<CLLocationDegrees> {
         return self.observe(CLLocationDegrees.self, "headingFilter")
