@@ -94,13 +94,13 @@ extension Reactive where Base: CLLocationManager {
     /// Reactive wrapper for `func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager)`
     #if os(iOS)
     public var didPause: ControlEvent<CLVoidEvent> {
-        let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didPauseLocationUpdates).mapTo(())
+        let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didPauseLocationUpdates).map(to: ())
         return ControlEvent(events: source)
     }
     
     /// Reactive wrapper for `func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager)`
     public var didResume: ControlEvent<CLVoidEvent> {
-        let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didResumeLocationUpdates).mapTo(())
+        let source: Observable<CLVoidEvent> = delegate.methodInvoked(.didResumeLocationUpdates).map(to: ())
         return ControlEvent(events: source)
     }
     
