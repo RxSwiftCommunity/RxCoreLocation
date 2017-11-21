@@ -158,3 +158,4 @@ $ git submodule update --init --recursive
 ## License
 
 RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxCoreLocation/RxCoreLocation/blob/master/LICENSE) for details.
+![Try me](https://media.giphy.com/media/d2jjuAZzDSVLZ5kI/giphy.gif)
