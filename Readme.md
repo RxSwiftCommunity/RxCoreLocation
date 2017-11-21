@@ -19,8 +19,8 @@ RxCoreLocation abstract the Rx behavior for Core Location
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 9.0+
+- iOS 9.3+ / Mac OS X 10.11+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 9.1+
 
 ## Installation
 
@@ -36,10 +36,10 @@ To integrate RxCoreLocation into your Xcode project using CocoaPods, specify it 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.3'
 use_frameworks!
 
-pod 'RxCoreLocation', '~> 0.0.1'
+pod 'RxCoreLocation', '~> 1.0.0'
 ```
 
 Then, run the following command:
@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate RxCoreLocation into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "RxCoreLocation/RxCoreLocation" ~> 0.0.1
+github "RxCoreLocation/RxCoreLocation" ~> 1.0.0
 ```
 ### Swift Package Manager
 
@@ -74,7 +74,7 @@ import PackageDescription
 let package = Package(
     name: "HelloRxCoreLocation",
     dependencies: [
-        .Package(url: "https://github.com/RxCoreLocation/RxCoreLocation.git", "0.0.1")
+        .Package(url: "https://github.com/RxCoreLocation/RxCoreLocation.git", "1.0.0")
     ]
 )
 ```
