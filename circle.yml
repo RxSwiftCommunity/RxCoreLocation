@@ -4,8 +4,6 @@ machine:
   environment:
     LANG: en_US.UTF-8
 dependencies:
-  override:
-    - bin/bootstrap-if-needed
   cache_directories:
     - "Carthage"
 test:
