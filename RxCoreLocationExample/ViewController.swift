@@ -40,6 +40,13 @@ class ViewController: UIViewController {
             .subscribe(onNext: { _ in })
             .disposed(by: bag)
         
+        /// Subscribe to placemark
+        manager.rx
+            .placemark
+            .debug("placemark")
+            .subscribe(onNext: { _ in })
+            .disposed(by: bag)
+        
         /// Subscribe to location
         manager.rx
             .location
