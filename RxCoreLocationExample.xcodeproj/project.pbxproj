@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C41E94911FC4377D00815E71 /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A8A4191FB5B57100356A42 /* RxCoreLocation.framework */; };
-		C41E94921FC4377D00815E71 /* RxCoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4A8A4191FB5B57100356A42 /* RxCoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C41E94981FC4388400815E71 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94951FC4380F00815E71 /* RxSwift.framework */; };
 		C41E94991FC4388400815E71 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94951FC4380F00815E71 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C41E949A1FC4388A00815E71 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94941FC4380F00815E71 /* RxCocoa.framework */; };
@@ -19,6 +17,8 @@
 		C4A8A3EF1FB5B4F600356A42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A8A3ED1FB5B4F600356A42 /* Main.storyboard */; };
 		C4A8A3F11FB5B4F600356A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A8A3F01FB5B4F600356A42 /* Assets.xcassets */; };
 		C4A8A3F41FB5B4F600356A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A8A3F21FB5B4F600356A42 /* LaunchScreen.storyboard */; };
+		C4BADF211FC4D8B800847618 /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BADF201FC4D8B800847618 /* RxCoreLocation.framework */; };
+		C4BADF221FC4D8B800847618 /* RxCoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4BADF201FC4D8B800847618 /* RxCoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,9 +28,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C4BADF221FC4D8B800847618 /* RxCoreLocation.framework in Embed Frameworks */,
 				C41E949B1FC4388A00815E71 /* RxCocoa.framework in Embed Frameworks */,
 				C41E94991FC4388400815E71 /* RxSwift.framework in Embed Frameworks */,
-				C41E94921FC4377D00815E71 /* RxCoreLocation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +51,7 @@
 		C4A8A4191FB5B57100356A42 /* RxCoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCoreLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A8A41A1FB5BC4C00356A42 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		C4A8A41C1FB5BC5200356A42 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		C4BADF201FC4D8B800847618 /* RxCoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCoreLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BADF211FC4D8B800847618 /* RxCoreLocation.framework in Frameworks */,
 				C41E949A1FC4388A00815E71 /* RxCocoa.framework in Frameworks */,
 				C41E94981FC4388400815E71 /* RxSwift.framework in Frameworks */,
-				C41E94911FC4377D00815E71 /* RxCoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +71,7 @@
 		C4A8A3DD1FB5B4F600356A42 = {
 			isa = PBXGroup;
 			children = (
+				C4BADF201FC4D8B800847618 /* RxCoreLocation.framework */,
 				C4A8A3E81FB5B4F600356A42 /* RxCoreLocationExample */,
 				C4A8A3E71FB5B4F600356A42 /* Products */,
 				C4A8A4171FB5B57100356A42 /* Frameworks */,
@@ -328,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQSY778SP8;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -350,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQSY778SP8;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
