@@ -1,12 +1,17 @@
 machine:
-xcode:
-version: 9.1
-environment:
-LANG: en_US.UTF-8
+  xcode:
+    version: 9.1
+  environment:
+    LANG: en_US.UTF-8
 dependencies:
-override:
-- echo "Skipping CocoaPods Specs install."
+  override:
+    - bin/bootstrap-if-needed
+  cache_directories:
+    - "Carthage"
 test:
-override:
-- set -o pipefail
-- xcodebuild -workspace 'RxCoreLocation.xcworkspace' -scheme 'RxCoreLocation-iOS' -configuration 'Debug' -destination 'platform=iOS Simulator,name=iPhone X,OS=11.1' -sdk iphonesimulator build test  | xcpretty -c --test
+  override:
+  - set -o pipefail
+  - xcodebuild test -workspace RxCoreLocation.xcworkspace -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator -destination "name=iPhone X" | xcpretty -c --test
+  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-watchOS -sdk watchsimulator -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
+  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-macOS -sdk macosx -destination "arch=x86_64" | xcpretty -c
+  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-tvOS -sdk appletvsimulator -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
