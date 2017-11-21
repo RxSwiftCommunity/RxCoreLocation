@@ -180,7 +180,29 @@ $ git submodule update --init --recursive
             print("longitude: \(currentLocation.coordinate.longitude)")
     })
     .disposed(by: bag)
+```
 
+- Observing the  `CLAuthorizationStatus`  and reacting based on your needs
+
+```swift
+
+    ///Monitoring authorization changes
+    
+    manager.rx
+    .didChangeAuthorization
+    .subscribe(onNext: {_, status in
+        switch status {
+        case .denied:
+            print("Authorization denied")
+        case .notDetermined:
+            print("Authorization: not determined")
+        case .restricted:
+            print("Authorization: restricted")
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("All good fire request")
+        }
+    })
+    .disposed(by: bag)
 ```
 ## License
 
