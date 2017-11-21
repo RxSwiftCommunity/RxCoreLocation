@@ -92,7 +92,11 @@ func clRegionErrorEvent(_ args: [Any]) throws -> CLRegionErrorEvent {
 }
 
 extension ObservableType {
-    public func mapTo<R>(_ value: R) -> Observable<R> {
+    func map<R>(to value: R) -> Observable<R> {
         return map {_ in value}
+    }
+    
+    func unwrap<T>() -> Observable<T> where E == Optional<T> {
+        return self.filter { $0 != nil }.map { $0! }
     }
 }
