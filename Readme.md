@@ -126,7 +126,35 @@ $ git submodule update --init --recursive
 - And that's it!
 
 ## Usage
+[RxCoreLocation](https://github.com/RxSwiftCommunity/RxCoreLocation) exposes lots of  [Apple Core Location](https://developer.apple.com/documentation/corelocation)  `API` for you to use directly inside your  App.
 
+-  Subscribing for a `CLPlacemark`
+```swift
+
+    /// Setup CLLocationManager
+    manager.requestWhenInUseAuthorization()
+    manager.startUpdatingLocation()
+    
+    manager.rx
+    .placemark
+    .subscribe(onNext: { placemark in
+        guard let name = placemark.name,
+            let isoCountryCode = placemark.isoCountryCode,
+            let country = placemark.country,
+            let postalCode = placemark.postalCode,
+            let locality = placemark.locality,
+            let subLocality = placemark.subLocality else {
+                return print("oops it looks like your placemark could not be computed")
+        }
+        print("name: \(name)")
+        print("isoCountryCode: \(isoCountryCode)")
+        print("country: \(country)")
+        print("postalCode: \(postalCode)")
+        print("locality: \(locality)")
+        print("subLocality: \(subLocality)")
+    })
+    .disposed(by: bag)
+```
 ## License
 
 RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxCoreLocation/RxCoreLocation/blob/master/LICENSE) for details.
