@@ -29,6 +29,9 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
+      location = "group:circle.yml">
+   </FileRef>
+   <FileRef
       location = "group:Readme.md">
    </FileRef>
    <FileRef

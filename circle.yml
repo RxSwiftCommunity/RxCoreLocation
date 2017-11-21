@@ -1,0 +1,12 @@
+machine:
+xcode:
+version: 9.1
+environment:
+LANG: en_US.UTF-8
+dependencies:
+override:
+- echo "Skipping CocoaPods Specs install."
+test:
+override:
+- set -o pipefail
+- xcodebuild -workspace 'RxCoreLocation.xcworkspace' -scheme 'RxCoreLocation-iOS' -configuration 'Debug' -destination 'platform=iOS Simulator,name=iPhone X,OS=11.1' -sdk iphonesimulator build test  | xcpretty -c --test
