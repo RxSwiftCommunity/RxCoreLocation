@@ -19,8 +19,8 @@ RxCoreLocation abstract the Rx behavior for Core Location
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 9.0+
+- iOS 9.3+ / Mac OS X 10.11+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 9.1+
 
 ## Installation
 
@@ -36,10 +36,10 @@ To integrate RxCoreLocation into your Xcode project using CocoaPods, specify it 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.3'
 use_frameworks!
 
-pod 'RxCoreLocation', '~> 0.0.1'
+pod 'RxCoreLocation', '~> 1.0.0'
 ```
 
 Then, run the following command:
@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate RxCoreLocation into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "RxCoreLocation/RxCoreLocation" ~> 0.0.1
+github "RxCoreLocation/RxCoreLocation" ~> 1.0.0
 ```
 ### Swift Package Manager
 
@@ -74,7 +74,7 @@ import PackageDescription
 let package = Package(
     name: "HelloRxCoreLocation",
     dependencies: [
-        .Package(url: "https://github.com/RxCoreLocation/RxCoreLocation.git", "0.0.1")
+        .Package(url: "https://github.com/RxCoreLocation/RxCoreLocation.git", "1.0.0")
     ]
 )
 ```
@@ -126,7 +126,85 @@ $ git submodule update --init --recursive
 - And that's it!
 
 ## Usage
+[RxCoreLocation](https://github.com/RxSwiftCommunity/RxCoreLocation) exposes lots of  [Apple Core Location](https://developer.apple.com/documentation/corelocation)  `API` for you to use directly inside your  App.
 
+-  Subscribing for a `CLPlacemark`
+```swift
+
+    /// Setup CLLocationManager
+    manager.requestWhenInUseAuthorization()
+    manager.startUpdatingLocation()
+    
+    manager.rx
+    .placemark
+    .subscribe(onNext: { placemark in
+        guard let name = placemark.name,
+            let isoCountryCode = placemark.isoCountryCode,
+            let country = placemark.country,
+            let postalCode = placemark.postalCode,
+            let locality = placemark.locality,
+            let subLocality = placemark.subLocality else {
+                return print("oops it looks like your placemark could not be computed")
+        }
+        print("name: \(name)")
+        print("isoCountryCode: \(isoCountryCode)")
+        print("country: \(country)")
+        print("postalCode: \(postalCode)")
+        print("locality: \(locality)")
+        print("subLocality: \(subLocality)")
+    })
+    .disposed(by: bag)
+```
+-  You can also subscribe for  a single `CLLocation`  update or for `[CLLocation]` 
+```swift
+
+    ///Subscribing for a single location events
+    manager.rx
+    .location
+    .subscribe(onNext: { location in
+        guard let location = location else { return }
+        print("altitude: \(location.altitude)")
+        print("latitude: \(location.coordinate.latitude)")
+        print("longitude: \(location.coordinate.longitude)")
+    })
+    .disposed(by: bag)
+    
+    ///Subscribing for an array of location events
+    manager.rx
+    .didUpdateLocations
+    .subscribe(onNext: { _, locations in
+        guard !locations.isEmpty,
+            let currentLocation = locations.last else { return }
+            print("altitude: \(currentLocation.altitude)")
+            print("latitude: \(currentLocation.coordinate.latitude)")
+            print("longitude: \(currentLocation.coordinate.longitude)")
+    })
+    .disposed(by: bag)
+```
+
+- Observing the  `CLAuthorizationStatus`  and reacting based on your needs
+
+```swift
+
+    ///Monitoring authorization changes
+    
+    manager.rx
+    .didChangeAuthorization
+    .subscribe(onNext: {_, status in
+        switch status {
+        case .denied:
+            print("Authorization denied")
+        case .notDetermined:
+            print("Authorization: not determined")
+        case .restricted:
+            print("Authorization: restricted")
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("All good fire request")
+        }
+    })
+    .disposed(by: bag)
+```
 ## License
 
 RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxCoreLocation/RxCoreLocation/blob/master/LICENSE) for details.
+![Try me](https://media.giphy.com/media/d2jjuAZzDSVLZ5kI/giphy.gif)
