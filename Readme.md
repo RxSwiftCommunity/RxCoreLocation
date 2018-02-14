@@ -1,13 +1,13 @@
 ## RxCoreLocation
 
 [![Platforms](https://img.shields.io/cocoapods/p/RxCoreLocation.svg)](https://cocoapods.org/pods/RxCoreLocation)
-[![License](https://img.shields.io/cocoapods/l/RxCoreLocation.svg)](https://raw.githubusercontent.com/RxCoreLocation/RxCoreLocation/master/LICENSE)
+[![License](https://img.shields.io/cocoapods/l/RxCoreLocation.svg)](https://raw.githubusercontent.com/RxSwiftCommunity/RxCoreLocation/master/LICENSE)
 
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/RxCoreLocation.svg)](https://cocoapods.org/pods/RxCoreLocation)
 
-[![Travis](https://img.shields.io/travis/RxCoreLocation/RxCoreLocation/master.svg)](https://travis-ci.org/RxCoreLocation/RxCoreLocation/branches)
+[![Travis](https://img.shields.io/travis/RxSwiftCommunity/RxCoreLocation/master.svg)](https://travis-ci.org/RxSwiftCommunity/RxCoreLocation/branches)
 [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
 
 RxCoreLocation abstract the Rx behavior for Core Location
@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate RxCoreLocation into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "RxCoreLocation/RxCoreLocation" ~> 1.0.0
+github "RxSwiftCommunity/RxCoreLocation" ~> 1.0.0
 ```
 ### Swift Package Manager
 
@@ -74,7 +74,7 @@ import PackageDescription
 let package = Package(
     name: "HelloRxCoreLocation",
     dependencies: [
-        .Package(url: "https://github.com/RxCoreLocation/RxCoreLocation.git", "1.0.0")
+        .Package(url: "https://github.com/RxSwiftCommunity/RxCoreLocation.git", "1.0.0")
     ]
 )
 ```
@@ -94,7 +94,7 @@ $ git init
 - Add RxCoreLocation as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
 
 ```bash
-$ git submodule add https://github.com/RxCoreLocation/RxCoreLocation.git
+$ git submodule add https://github.com/RxSwiftCommunity/RxCoreLocation.git
 $ git submodule update --init --recursive
 ```
 
@@ -118,7 +118,7 @@ $ git submodule update --init --recursive
 
 #### Embeded Binaries
 
-- Download the latest release from https://github.com/RxCoreLocation/RxCoreLocation/releases
+- Download the latest release from https://github.com/RxSwiftCommunity/RxCoreLocation/releases
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
 - Click on the `+` button under the "Embedded Binaries" section.
@@ -206,5 +206,5 @@ $ git submodule update --init --recursive
 ```
 ## License
 
-RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxCoreLocation/RxCoreLocation/blob/master/LICENSE) for details.
+RxCoreLocation is released under the MIT license. See [LICENSE](https://github.com/RxSwiftCommunity/RxCoreLocation/blob/master/LICENSE) for details.
 ![Try me](https://media.giphy.com/media/d2jjuAZzDSVLZ5kI/giphy.gif)
