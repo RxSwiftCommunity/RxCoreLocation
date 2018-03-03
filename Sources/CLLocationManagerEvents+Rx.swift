@@ -15,37 +15,42 @@ import CoreLocation
 extension Reactive where Base: CLLocationManager {
     /// Reactive Observable for `activityType`
     public var activityType: Observable<CLActivityType?> {
-        return self.observe(CLActivityType.self, "activityType")
+        return self.observe(CLActivityType.self, .activityType)
     }
     /// Reactive Observable for `distanceFilter`
     public var distanceFilter: Observable<CLLocationDistance> {
-        return self.observe(CLLocationDistance.self, "distanceFilter")
-            .map { $0 ?? 0.0 }
+        return self.observe(CLLocationDistance.self, .distanceFilter)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `desiredAccuracy`
     public var desiredAccuracy: Observable<CLLocationAccuracy> {
-        return self.observe(CLLocationAccuracy.self, "desiredAccuracy")
-            .map { $0 ?? 0.0 }
+        return self.observe(CLLocationAccuracy.self, .desiredAccuracy)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `pausesLocationUpdatesAutomatically`
     public var pausesLocationUpdatesAutomatically: Observable<Bool> {
-        return self.observe(Bool.self, "pausesLocationUpdatesAutomatically")
-            .map { $0 ?? false }
+        return self.observe(Bool.self, .pausesLocationUpdatesAutomatically)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `allowsBackgroundLocationUpdates`
     public var allowsBackgroundLocationUpdates: Observable<Bool> {
-        return self.observe(Bool.self, "allowsBackgroundLocationUpdates")
-            .map { $0 ?? false }
+        return self.observe(Bool.self, .allowsBackgroundLocationUpdates)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `showsBackgroundLocationIndicator`
     public var showsBackgroundLocationIndicator: Observable<Bool> {
-        return self.observe(Bool.self, "showsBackgroundLocationIndicator")
-            .map { $0 ?? false }
+        return self.observe(Bool.self, .showsBackgroundLocationIndicator)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `location`
     public var location: Observable<CLLocation?> {
         let updatedLocation = self.didUpdateLocations.map { $1.last }
-        let location =  self.observe(CLLocation.self, "location")
+        let location =  self.observe(CLLocation.self, .location)
         return Observable.of(location, updatedLocation).merge()
     }
     /// Reactive Observable for CLPlacemark
@@ -67,33 +72,37 @@ extension Reactive where Base: CLLocationManager {
     }
     /// Reactive Observable for `headingFilter`
     public var headingFilter: Observable<CLLocationDegrees> {
-        return self.observe(CLLocationDegrees.self, "headingFilter")
-            .map { $0 ?? 0.0 }
+        return self.observe(CLLocationDegrees.self, .headingFilter)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `headingOrientation`
     public var headingOrientation: Observable<CLDeviceOrientation?> {
-        return self.observe(CLDeviceOrientation.self, "headingOrientation")
+        return self.observe(CLDeviceOrientation.self, .headingOrientation)
     }
      #if os(iOS) || os(macOS)
     /// Reactive Observable for `heading`
     public var heading: Observable<CLHeading?> {
-        return self.observe(CLHeading.self, "heading")
+        return self.observe(CLHeading.self, .heading)
     }
     #endif
     /// Reactive Observable for `maximumRegionMonitoringDistance`
     public var maximumRegionMonitoringDistance: Observable<CLLocationDistance> {
-        return self.observe(CLLocationDistance.self, "maximumRegionMonitoringDistance")
-            .map { $0 ?? 0.0 }
+        return self.observe(CLLocationDistance.self, .maximumRegionMonitoringDistance)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `monitoredRegions`
     public var monitoredRegions: Observable<Set<CLRegion>> {
-        return self.observe(Set<CLRegion>.self, "monitoredRegions")
-            .map { $0 ?? [] }
+        return self.observe(Set<CLRegion>.self, .monitoredRegions)
+            .map { $0 }
+            .unwrap()
     }
     /// Reactive Observable for `rangedRegions`
     public var rangedRegions: Observable<Set<CLRegion>> {
-        return self.observe(Set<CLRegion>.self, "rangedRegions")
-            .map { $0 ?? [] }
+        return self.observe(Set<CLRegion>.self, .rangedRegions)
+            .map { $0 }
+            .unwrap()
     }
     
     /// Reactive Observable for `locationServicesEnabled`
