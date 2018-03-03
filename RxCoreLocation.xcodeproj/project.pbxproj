@@ -17,6 +17,10 @@
 		35B742301F82A5E000829B21 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B742311F82A5EC00829B21 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422D1F82A5DF00829B21 /* Nimble.framework */; };
 		35B742321F82A5EC00829B21 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; };
+		A85013AF204F093C00094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
+		A85013B0204F174100094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
+		A85013B1204F174100094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
+		A85013B2204F174200094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
 		C44FC2861FB59E150051CCA2 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */; };
 		C44FC28A1FB59FC00051CCA2 /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */; };
 		C48D554A1FA4FBD400FF1BF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */; };
@@ -100,6 +104,7 @@
 		35B7422E1F82A5E000829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		A85013AE204F093C00094A90 /* RxKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxKeyPaths.swift; sourceTree = "<group>"; };
 		C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
 		C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
 		C48D55481FA4FBD300FF1BF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 		3549BB5C1DA38AA500C63030 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A85013AE204F093C00094A90 /* RxKeyPaths.swift */,
 				C4B8B1FB1FA50C1E005E0A69 /* RxSelectors.swift */,
 				C4B8B2001FA5C9D0005E0A69 /* RxEventTypealias.swift */,
 				C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */,
@@ -510,6 +516,7 @@
 				C4B8B20B1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2061FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				C4BEE2641FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
+				A85013AF204F093C00094A90 /* RxKeyPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +530,7 @@
 				C4B8B20E1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2091FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				C4BEE2671FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
+				A85013B2204F174200094A90 /* RxKeyPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +544,7 @@
 				C4B8B20C1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2071FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				C4BEE2651FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
+				A85013B0204F174100094A90 /* RxKeyPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +558,7 @@
 				C4B8B20D1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2081FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				C4BEE2661FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
+				A85013B1204F174100094A90 /* RxKeyPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
