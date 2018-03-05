@@ -6,43 +6,38 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
-import CoreLocation
+import class CoreLocation.CLLocationManager
+import protocol CoreLocation.CLLocationManagerDelegate
 #if !RX_NO_MODULE
     import RxSwift
     import RxCocoa
 #endif
 
-public typealias RxCLLocationManagerDelegate = DelegateProxy<CLLocationManager, CLLocationManagerDelegate>
-
-extension CLLocationManager: HasDelegate {
-    public typealias Delegate = CLLocationManagerDelegate
-}
-
-open class RxCLLocationManagerDelegateProxy: RxCLLocationManagerDelegate, DelegateProxyType, CLLocationManagerDelegate {
-    
+public class RxCLLocationManagerDelegateProxy: DelegateProxy, CLLocationManagerDelegate, DelegateProxyType {
     /// Type of parent object
     public weak private(set) var manager: CLLocationManager?
-    
+
+    // MARK: Initializers
+
     /// Init with ParentObject
-    public init(parentObject: ParentObject) {
-        manager = parentObject
-        super.init(parentObject: parentObject, delegateProxy: RxCLLocationManagerDelegateProxy.self)
+    public required init(parentObject: AnyObject) {
+        manager = castOrFatalError(parentObject)
+
+        super.init(parentObject: parentObject)
     }
-    
-    /// Register self to known implementations
-    public static func registerKnownImplementations() {
-        self.register { parent -> RxCLLocationManagerDelegateProxy in
-            RxCLLocationManagerDelegateProxy(parentObject: parent)
-        }
-    }
-    
+
+    // MARK: DelegateProxyType conforms
+
     /// Gets the current `CLLocationManagerDelegate` on `CLLocationManager`
-    open class func currentDelegate(for object: ParentObject) -> CLLocationManagerDelegate? {
-        return object.delegate
+    public static func currentDelegateFor(_ object: AnyObject) -> AnyObject? {
+        let manager: CLLocationManager = castOrFatalError(object)
+
+        return manager.delegate
     }
-    
+
     /// Set the CLLocationManagerDelegate for `CLLocationManager`
-    open class func setCurrentDelegate(_ delegate: CLLocationManagerDelegate?, to object: ParentObject) {
-        object.delegate = delegate
+    public static func setCurrentDelegate(_ delegate: AnyObject?, toObject object: AnyObject) {
+        let manager: CLLocationManager = castOrFatalError(object)
+        manager.delegate = castOptionalOrFatalError(delegate)
     }
 }

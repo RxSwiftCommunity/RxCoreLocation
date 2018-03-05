@@ -6,11 +6,9 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
-import Foundation
-import Quick
-import Nimble
-import RxSwift
-import RxTest
+import protocol RxSwift.ObservableConvertibleType
+import class RxTest.TestScheduler
+import class RxTest.TestableObserver
 
 extension TestScheduler {
      /// Builds testable observer for s specific observable sequence, binds it's results and sets up disposal.
