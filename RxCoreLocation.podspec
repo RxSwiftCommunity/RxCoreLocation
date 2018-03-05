@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
  s.social_media_url = 'https://twitter.com/bobgodwinx'
  s.authors = { "Obi Bob Godwin" => "bobgodwinx@gmail.com" }
  s.source = { :git => "https://github.com/RxSwiftCommunity/RxCoreLocation.git", :tag => s.version.to_s }
- s.ios.deployment_target = '9.3'
+ s.ios.deployment_target = '9.0'
  s.osx.deployment_target = '10.11'
  s.watchos.deployment_target = '2.0'
  s.tvos.deployment_target = '9.0'
@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
  s.subspec "Core" do |ss|
      ss.source_files  = "Sources/*.swift"
      ss.framework  = "Foundation"
-     ss.dependency "RxSwift", "~> 4.0"
-     ss.dependency "RxCocoa", "~> 4.0"
+     ss.dependency "RxSwift", "~> 3.6.1"
+     ss.dependency "RxCocoa", "~> 3.6.1"
  end
 
 end
