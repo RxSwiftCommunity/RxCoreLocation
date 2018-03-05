@@ -6,13 +6,11 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
-import Foundation
-import Quick
 import Nimble
-import RxSwift
-import RxCocoa
-import RxTest
-import CoreLocation
+import Quick
+import func RxCocoa.driveOnScheduler
+import class RxSwift.Observable
+import class RxTest.TestScheduler
 @testable import RxCoreLocation
 
 struct HasEventsBehaviorContext<T> {
@@ -42,7 +40,7 @@ class HasEventsBehavior<T>: Quick.Behavior<HasEventsBehaviorContext<T>> {
         
         describe("Has Events Behavior") {
             it("Actually got the event") {
-                SharingScheduler.mock(scheduler: scheduler) {
+                driveOnScheduler(scheduler) {
                     let recorded = scheduler.record(source: observable)
                     scheduler.start()
                     expect(recorded.events.count) == 1

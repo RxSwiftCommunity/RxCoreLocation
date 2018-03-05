@@ -6,12 +6,10 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
+import CoreLocation
 import Quick
 import Nimble
-import CoreLocation
-import RxSwift
-import RxCocoa
-import RxTest
+import class RxTest.TestScheduler
 @testable import RxCoreLocation
 
 class RxCoreLocationSpec: QuickSpec {

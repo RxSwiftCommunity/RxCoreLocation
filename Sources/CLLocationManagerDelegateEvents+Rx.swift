@@ -6,18 +6,29 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
-import CoreLocation
+import class CoreLocation.CLLocationManager
 #if !RX_NO_MODULE
     import RxSwift
     import RxCocoa
 #endif
+
+extension CLLocationManager {
+
+    /// Factory method that enables subclasses to implement their own `delegate`.
+    ///
+    /// - returns Instance of delegate proxy that wraps `delegate`.
+    public func createRxDelegateProxy() -> RxCLLocationManagerDelegateProxy {
+        return RxCLLocationManagerDelegateProxy(parentObject: self)
+    }
+}
+
 /// extension wrapper With Base class `CLLocationManager`
 /// Wraps events coming form `CLLocationManagerDelegat`
 extension Reactive where Base: CLLocationManager {
-    
+
     /// Reactive wrapper for `CLLocationManagerDelegate`.
-    public var delegate: RxCLLocationManagerDelegate {
-        return RxCLLocationManagerDelegateProxy.proxy(for: base)
+    public var delegate: DelegateProxy {
+        return RxCLLocationManagerDelegateProxy.proxyForObject(base)
     }
 
     /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)`

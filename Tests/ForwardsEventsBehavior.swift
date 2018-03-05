@@ -6,15 +6,12 @@
 //  Copyright © 2017 RxCoreLocation. All rights reserved.
 //
 
-import Foundation
-import Quick
+import class CoreLocation.CLLocationManager
 import Nimble
-import RxSwift
-import RxCocoa
-import RxTest
-import CoreLocation
+import Quick
+import func RxCocoa.driveOnScheduler
+import class RxTest.TestScheduler
 @testable import RxCoreLocation
-
 
 struct ForwardsEventsBehaviorContext {
     let sut: CLLocationManager
@@ -54,7 +51,7 @@ class ForwardsEventsBehavior: Quick.Behavior<ForwardsEventsBehaviorContext> {
         
         describe("Has Events Behavior") {
             it("sentMessage") {
-                SharingScheduler.mock(scheduler: scheduler) {
+                driveOnScheduler(scheduler) {
                     let sentMessage = scheduler.record(source: sut.rx.delegate.sentMessage(selector))
                     invoked()
                     scheduler.start()
@@ -63,7 +60,7 @@ class ForwardsEventsBehavior: Quick.Behavior<ForwardsEventsBehaviorContext> {
             }
             
             it("methodInvoke") {
-                SharingScheduler.mock(scheduler: scheduler) {
+                driveOnScheduler(scheduler) {
                     let methodInvoked = scheduler.record(source: sut.rx.delegate.methodInvoked(selector))
                     invoked()
                     scheduler.start()
