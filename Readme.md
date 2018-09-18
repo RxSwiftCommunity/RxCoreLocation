@@ -39,7 +39,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'RxCoreLocation', '~> 1.3.0'
+pod 'RxCoreLocation', '~> 1.3.1'
 ```
 
 Then, run the following command:
@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate RxCoreLocation into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "RxSwiftCommunity/RxCoreLocation" ~> 1.3.0
+github "RxSwiftCommunity/RxCoreLocation" ~> 1.3.1
 ```
 ### Swift Package Manager
 
@@ -74,7 +74,7 @@ import PackageDescription
 let package = Package(
     name: "HelloRxCoreLocation",
     dependencies: [
-        .Package(url: "https://github.com/RxSwiftCommunity/RxCoreLocation.git", "1.3.0")
+        .Package(url: "https://github.com/RxSwiftCommunity/RxCoreLocation.git", "1.3.1")
     ]
 )
 ```
