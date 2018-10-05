@@ -1,15 +1,93 @@
-machine:
-  xcode:
-    version: 9.1
-  environment:
-    LANG: en_US.UTF-8
-dependencies:
-  cache_directories:
-    - "Carthage"
-test:
-  override:
-  - set -o pipefail
-  - xcodebuild test -workspace RxCoreLocation.xcworkspace -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator -destination "name=iPhone X" | xcpretty -c --test
-  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-watchOS -sdk watchsimulator -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
-  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-macOS -sdk macosx -destination "arch=x86_64" | xcpretty -c
-  - xcodebuild build -workspace RxCoreLocation.xcworkspace -scheme RxCoreLocation-tvOS -sdk appletvsimulator -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
+---
+version: 2
+jobs:
+  "RxCoreLocation Tests":
+    working_directory: ~/RxSwiftCommunity/RxCoreLocation
+    parallelism: 1
+    shell: /bin/bash --login
+    environment:
+      XCODE_TEST_REPORTS: /tmp/xcode-test-results
+      LANG: en_US.UTF-8
+    macos:
+      xcode: '10.0.0'
+    steps:
+      - checkout
+      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
+      - restore_cache:
+          keys:
+            - v1-dep-{{ .Branch }}-
+            - v1-dep-master-
+            - v1-dep-
+      - run:
+          name: Bootstrap Carthage
+          command: carthage update --no-use-binaries
+      - save_cache:
+          key: v1-dep-{{ .Branch }}-{{ epoch }}
+          paths:
+            - Carthage
+      - run:
+          name: Run Tests (Swift 4.0)
+          command: >
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=4.0
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
+                   -destination "name=iPhone X" | xcpretty -c --test
+      - run:
+          name: Run Tests (Swift 4.2)
+          command: >
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=4.2
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
+                   -destination "name=iPhone X" | xcpretty -c --test
+      - run:
+          name: Build  watchOS (Swift 4.0)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.0
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-watchOS -sdk watchsimulator
+                   -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
+      - run:
+          name: Build  watchOS (Swift 4.2)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.2
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-watchOS -sdk watchsimulator
+                   -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
+      - run:
+          name: Build  macOS (Swift 4.0)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.0
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-macOS -sdk macosx
+                   -destination "arch=x86_64" | xcpretty -c
+      - run:
+          name: Build  macOS (Swift 4.2)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.2
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-macOS -sdk macosx
+                   -destination "arch=x86_64" | xcpretty -c
+      - run:
+          name: Build  tvOS (Swift 4.0)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.0
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-tvOS -sdk appletvsimulator
+                   -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
+      - run:
+          name: Build  tvOS (Swift 4.2)
+          command: >
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=4.2
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme RxCoreLocation-tvOS -sdk appletvsimulator
+                   -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
+      - store_artifacts:
+          path: /tmp/xcode-test-results
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "RxCoreLocation Tests":
+          filters:
+            tags:
+              ignore: /[0-9]+(\.[0-9]+)*/
