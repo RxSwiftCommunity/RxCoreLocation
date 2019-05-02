@@ -96,7 +96,7 @@ extension ObservableType {
         return map {_ in value}
     }
     
-    func unwrap<T>() -> Observable<T> where E == Optional<T> {
+    func unwrap<T>() -> Observable<T> where Element == Optional<T> {
         return self.filter { $0 != nil }.map { $0! }
     }
 }
