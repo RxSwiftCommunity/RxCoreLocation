@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 //
 //  RxCoreLocation.swift
 //  RxCoreLocation
@@ -10,6 +11,13 @@ import PackageDescription
 
 let package = Package(
     name: "RxCoreLocation",
-    dependencies: [],
-    exclude: ["Tests"]
+    products: [
+        .library(name: "RxCoreLocation", targets: ["RxCoreLocation"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
+    ],
+    targets: [
+        .target(name: "RxCoreLocation", dependencies: ["RxSwift", "RxCocoa"], path: "Sources")
+    ]
 )
