@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  s.name = 'RxCoreLocation'
- s.version = '1.4.0'
+ s.version = '1.4.1'
  s.license = { :type => "MIT", :file => "LICENSE" }
  s.summary = 'RxCoreLocation abstract the Rx behavior for Core Location'
  s.homepage = 'http://github.com/RxSwiftCommunity/RxCoreLocation'
