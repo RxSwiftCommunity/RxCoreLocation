@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Bootstrap Carthage
-    - run: carthage update --no-use-binaries
+      run: carthage update --no-use-binaries
     - name: Build
       run: swift build -v
     - name: Run tests
-    - run: xcodebuild test SWIFT_VERSION=5.1
+      run: xcodebuild test SWIFT_VERSION=5.1
                    -workspace RxCoreLocation.xcworkspace
                    -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
                    -destination "name=iPhone X" | xcpretty -c --test
