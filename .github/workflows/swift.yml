@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Bootstrap Carthage
-      run: carthage update --no-use-binaries
-    - name: Build
-      run: swift build -v
+    # - name: Bootstrap Carthage
+    #  run: carthage update --no-use-binaries
+    # - name: Build
+    #  run: swift build -v
     - name: Run tests
       run: xcodebuild test SWIFT_VERSION=5.1
                    -workspace RxCoreLocation.xcworkspace
