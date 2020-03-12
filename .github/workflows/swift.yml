@@ -9,16 +9,11 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v2
-    # - name: Bootstrap Carthage
-    #  run: carthage update --no-use-binaries
-    # - name: Build
-    #  run: swift build -v
+    - name: Bootstrap Carthage
+      run: carthage update --no-use-binaries
     - name: Run tests
-      run: xcodebuild test SWIFT_VERSION=5.1
-                   -workspace RxCoreLocation.xcworkspace
-                   -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
-                   -destination "name=iPhone X" | xcpretty -c --test
+      run: xcodebuild test SWIFT_VERSION=5.1 -workspace RxCoreLocation.xcworkspace -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator -destination "name=iPhone 11" | xcpretty -c --test
