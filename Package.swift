@@ -15,7 +15,7 @@ let package = Package(
         .library(name: "RxCoreLocation", targets: ["RxCoreLocation"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.1.0")
     ],
     targets: [
         .target(name: "RxCoreLocation", dependencies: ["RxSwift", "RxCocoa"], path: "Sources")
