@@ -9,7 +9,7 @@ jobs:
       XCODE_TEST_REPORTS: /tmp/xcode-test-results
       LANG: en_US.UTF-8
     macos:
-      xcode: '10.2.0'
+      xcode: '11.4.0'
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -26,33 +26,40 @@ jobs:
           paths:
             - Carthage
       - run:
+          name: Run Tests (Swift 5.2)
+          command: >
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.2
+                   -workspace RxCoreLocation.xcworkspace
+                   -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
+                   -destination "name=iPhone 11" | xcpretty -c --test
+      - run:
           name: Run Tests (Swift 5.1)
           command: >
                    set -o pipefail && xcodebuild test SWIFT_VERSION=5.1
                    -workspace RxCoreLocation.xcworkspace
                    -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
-                   -destination "name=iPhone X" | xcpretty -c --test
+                   -destination "name=iPhone 11" | xcpretty -c --test
       - run:
-          name: Run Tests (Swift 5.0)
+          name: Build  watchOS (Swift 5.2)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2
                    -workspace RxCoreLocation.xcworkspace
-                   -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
-                   -destination "name=iPhone X" | xcpretty -c --test
+                   -scheme RxCoreLocation-watchOS -sdk watchsimulator
+                   -destination "name=Apple Watch Series 5 - 44mm" | xcpretty -c
       - run:
           name: Build  watchOS (Swift 5.1)
           command: >
                    set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-watchOS -sdk watchsimulator
-                   -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
+                   -destination "name=Apple Watch Series 5 - 44mm" | xcpretty -c
       - run:
-          name: Build  watchOS (Swift 5.0)
+          name: Build  macOS (Swift 5.2)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2
                    -workspace RxCoreLocation.xcworkspace
-                   -scheme RxCoreLocation-watchOS -sdk watchsimulator
-                   -destination "name=Apple Watch Series 2 - 42mm" | xcpretty -c
+                   -scheme RxCoreLocation-macOS -sdk macosx
+                   -destination "arch=x86_64" | xcpretty -c
       - run:
           name: Build  macOS (Swift 5.1)
           command: >
@@ -61,23 +68,16 @@ jobs:
                    -scheme RxCoreLocation-macOS -sdk macosx
                    -destination "arch=x86_64" | xcpretty -c
       - run:
-          name: Build  macOS (Swift 5.0)
+          name: Build  tvOS (Swift 5.2)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.0
-                   -workspace RxCoreLocation.xcworkspace
-                   -scheme RxCoreLocation-macOS -sdk macosx
-                   -destination "arch=x86_64" | xcpretty -c
-      - run:
-          name: Build  tvOS (Swift 5.1)
-          command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-tvOS -sdk appletvsimulator
                    -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
       - run:
-          name: Build  tvOS (Swift 5.0)
+          name: Build  tvOS (Swift 5.1)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-tvOS -sdk appletvsimulator
                    -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
