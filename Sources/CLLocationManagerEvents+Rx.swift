@@ -57,7 +57,7 @@ extension Reactive where Base: CLLocationManager {
     public var placemark: Observable<CLPlacemark> {
         return location.unwrap().flatMap(placemark(with:))
     }
-    /// Private reactive wrapper for `CLGeocoder`.`reverseGeocodeLocation`
+    /// Private reactive wrapper for `CLGeocoder`.`reverseGeocodeLocation(_:completionHandler:)`
     /// used to search for placemark
     private func placemark(with location: CLLocation) -> Observable<CLPlacemark> {
         return Observable.create { observer in
@@ -70,6 +70,27 @@ extension Reactive where Base: CLLocationManager {
             }
         }.unwrap()
     }
+
+    /// Reactive Observable for CLPlacemark with a given locale
+    @available(iOS 11.0, *)
+    public func placemark(preferredLocale: Locale) -> Observable<CLPlacemark> {
+        return location.unwrap().flatMap { self.placemark(with: $0, preferredLocale: preferredLocale) }
+    }
+    /// Private reactive wrapper for `CLGeocoder`.`reverseGeocodeLocation(_:preferredLocale:completionHandler:)`
+    /// used to search for placemark
+    @available(iOS 11.0, *)
+    private func placemark(with location: CLLocation, preferredLocale: Locale) -> Observable<CLPlacemark> {
+        return Observable.create { observer in
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location, preferredLocale: preferredLocale) { placemarks, _ in
+                observer.onNext(placemarks?.first)
+            }
+            return Disposables.create {
+                observer.onCompleted()
+            }
+        }.unwrap()
+    }
+
     /// Reactive Observable for `headingFilter`
     public var headingFilter: Observable<CLLocationDegrees> {
         return self.observe(CLLocationDegrees.self, .headingFilter)
