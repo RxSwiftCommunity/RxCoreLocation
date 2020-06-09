@@ -72,13 +72,13 @@ extension Reactive where Base: CLLocationManager {
     }
 
     /// Reactive Observable for CLPlacemark with a given locale
-    @available(iOS 11.0, *)
+    @available(iOS 11.0, OSX 10.13, watchOSApplicationExtension 4.0, tvOS 11.0, *)
     public func placemark(preferredLocale: Locale) -> Observable<CLPlacemark> {
         return location.unwrap().flatMap { self.placemark(with: $0, preferredLocale: preferredLocale) }
     }
     /// Private reactive wrapper for `CLGeocoder`.`reverseGeocodeLocation(_:preferredLocale:completionHandler:)`
     /// used to search for placemark
-    @available(iOS 11.0, *)
+    @available(iOS 11.0, OSX 10.13, watchOSApplicationExtension 4.0, tvOS 11.0, *)
     private func placemark(with location: CLLocation, preferredLocale: Locale) -> Observable<CLPlacemark> {
         return Observable.create { observer in
             let geocoder = CLGeocoder()
