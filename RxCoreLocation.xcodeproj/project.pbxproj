@@ -17,6 +17,10 @@
 		35B742301F82A5E000829B21 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B742311F82A5EC00829B21 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422D1F82A5DF00829B21 /* Nimble.framework */; };
 		35B742321F82A5EC00829B21 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; };
+		6AE878E92515080400C14D48 /* CLGeocoderEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */; };
+		6AE878EA25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */; };
+		6AE878EB25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */; };
+		6AE878EC25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */; };
 		A85013AF204F093C00094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
 		A85013B0204F174100094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
 		A85013B1204F174100094A90 /* RxKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85013AE204F093C00094A90 /* RxKeyPaths.swift */; };
@@ -104,6 +108,7 @@
 		35B7422E1F82A5E000829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLGeocoderEvents+Rx.swift"; sourceTree = "<group>"; };
 		A85013AE204F093C00094A90 /* RxKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxKeyPaths.swift; sourceTree = "<group>"; };
 		C44FC2851FB59E150051CCA2 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
 		C44FC2891FB59FC00051CCA2 /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
@@ -251,6 +256,7 @@
 				C4B8B2051FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift */,
 				C4B8B20A1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift */,
 				C4BEE2631FB319670098BB4A /* CLLocationManagerEvents+Rx.swift */,
+				6AE878E82515080400C14D48 /* CLGeocoderEvents+Rx.swift */,
 				C4B8B20F1FA654A5005E0A69 /* Helpers.swift */,
 			);
 			name = Core;
@@ -516,6 +522,7 @@
 				C4B8B1FC1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				C4B8B20B1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2061FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				6AE878E92515080400C14D48 /* CLGeocoderEvents+Rx.swift in Sources */,
 				C4BEE2641FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 				A85013AF204F093C00094A90 /* RxKeyPaths.swift in Sources */,
 			);
@@ -530,6 +537,7 @@
 				C4B8B1FF1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				C4B8B20E1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2091FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				6AE878EC25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */,
 				C4BEE2671FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 				A85013B2204F174200094A90 /* RxKeyPaths.swift in Sources */,
 			);
@@ -544,6 +552,7 @@
 				C4B8B1FD1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				C4B8B20C1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2071FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				6AE878EA25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */,
 				C4BEE2651FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 				A85013B0204F174100094A90 /* RxKeyPaths.swift in Sources */,
 			);
@@ -558,6 +567,7 @@
 				C4B8B1FE1FA50C1E005E0A69 /* RxSelectors.swift in Sources */,
 				C4B8B20D1FA646B7005E0A69 /* CLLocationManagerDelegateEvents+Rx.swift in Sources */,
 				C4B8B2081FA62049005E0A69 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				6AE878EB25150A3A00C14D48 /* CLGeocoderEvents+Rx.swift in Sources */,
 				C4BEE2661FB319670098BB4A /* CLLocationManagerEvents+Rx.swift in Sources */,
 				A85013B1204F174100094A90 /* RxKeyPaths.swift in Sources */,
 			);
