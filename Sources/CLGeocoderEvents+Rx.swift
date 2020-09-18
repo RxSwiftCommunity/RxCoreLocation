@@ -21,6 +21,7 @@ extension Reactive where Base: CLGeocoder {
                 observer.onNext(placemarks?.first)
             }
             return Disposables.create {
+                base.cancelGeocode()
                 observer.onCompleted()
             }
         }.unwrap()
@@ -35,6 +36,7 @@ extension Reactive where Base: CLGeocoder {
                 observer.onNext(placemarks?.first)
             }
             return Disposables.create {
+                base.cancelGeocode()
                 observer.onCompleted()
             }
         }.unwrap()
