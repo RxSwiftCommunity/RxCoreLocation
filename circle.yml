@@ -9,7 +9,7 @@ jobs:
       XCODE_TEST_REPORTS: /tmp/xcode-test-results
       LANG: en_US.UTF-8
     macos:
-      xcode: '11.4.0'
+      xcode: '12.3.0'
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -20,7 +20,14 @@ jobs:
             - v1-dep-
       - run:
           name: Bootstrap Carthage
-          command: carthage update --no-use-binaries
+          command: >
+                    set -euo pipefail
+                    xcconfig=$(mktemp /tmp/static.xcconfig.XXXXXX)
+                    trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
+                    echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200 = arm64 arm64e armv7 armv7s armv6 armv8' >> $xcconfig
+                    echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR))' >> $xcconfig
+                    export XCODE_XCCONFIG_FILE="$xcconfig"
+                    carthage update --no-use-binaries
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
@@ -33,9 +40,9 @@ jobs:
                    -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
                    -destination "name=iPhone 11" | xcpretty -c --test
       - run:
-          name: Run Tests (Swift 5.1)
+          name: Run Tests (Swift 5.3)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.1
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.3
                    -workspace RxCoreLocation.xcworkspace
                    -scheme 'RxCoreLocation-iOS' -sdk iphonesimulator
                    -destination "name=iPhone 11" | xcpretty -c --test
@@ -47,9 +54,9 @@ jobs:
                    -scheme RxCoreLocation-watchOS -sdk watchsimulator
                    -destination "name=Apple Watch Series 5 - 44mm" | xcpretty -c
       - run:
-          name: Build  watchOS (Swift 5.1)
+          name: Build  watchOS (Swift 5.3)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.3
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-watchOS -sdk watchsimulator
                    -destination "name=Apple Watch Series 5 - 44mm" | xcpretty -c
@@ -61,9 +68,9 @@ jobs:
                    -scheme RxCoreLocation-macOS -sdk macosx
                    -destination "arch=x86_64" | xcpretty -c
       - run:
-          name: Build  macOS (Swift 5.1)
+          name: Build  macOS (Swift 5.3)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.3
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-macOS -sdk macosx
                    -destination "arch=x86_64" | xcpretty -c
@@ -75,9 +82,9 @@ jobs:
                    -scheme RxCoreLocation-tvOS -sdk appletvsimulator
                    -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
       - run:
-          name: Build  tvOS (Swift 5.1)
+          name: Build  tvOS (Swift 5.3)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.1
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.3
                    -workspace RxCoreLocation.xcworkspace
                    -scheme RxCoreLocation-tvOS -sdk appletvsimulator
                    -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
