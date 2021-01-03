@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C41E94981FC4388400815E71 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94951FC4380F00815E71 /* RxSwift.framework */; };
-		C41E94991FC4388400815E71 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94951FC4380F00815E71 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C41E949A1FC4388A00815E71 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94941FC4380F00815E71 /* RxCocoa.framework */; };
-		C41E949B1FC4388A00815E71 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41E94941FC4380F00815E71 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C47207A01FB8ED5400197310 /* berlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C472079F1FB8ED5400197310 /* berlin.gpx */; };
 		C4A8A3EA1FB5B4F600356A42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8A3E91FB5B4F600356A42 /* AppDelegate.swift */; };
 		C4A8A3EC1FB5B4F600356A42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8A3EB1FB5B4F600356A42 /* ViewController.swift */; };
@@ -29,8 +25,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C4BADF221FC4D8B800847618 /* RxCoreLocation.framework in Embed Frameworks */,
-				C41E949B1FC4388A00815E71 /* RxCocoa.framework in Embed Frameworks */,
-				C41E94991FC4388400815E71 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,8 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4BADF211FC4D8B800847618 /* RxCoreLocation.framework in Frameworks */,
-				C41E949A1FC4388A00815E71 /* RxCocoa.framework in Frameworks */,
-				C41E94981FC4388400815E71 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
