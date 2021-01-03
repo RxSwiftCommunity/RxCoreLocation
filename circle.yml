@@ -19,6 +19,9 @@ jobs:
             - v1-dep-master-
             - v1-dep-
       - run:
+          name: export XCODE_XCCONFIG_FILE
+          command: export XCODE_XCCONFIG_FILE=$PWD/tmp.xcconfig
+      - run:
           name: Bootstrap Carthage
           command: carthage update --no-use-binaries
       - save_cache:
