@@ -14,6 +14,7 @@ extension String {
     static let desiredAccuracy = #keyPath(CLLocationManager.desiredAccuracy)
     static let pausesLocationUpdatesAutomatically = #keyPath(CLLocationManager.pausesLocationUpdatesAutomatically)
     static let allowsBackgroundLocationUpdates = #keyPath(CLLocationManager.allowsBackgroundLocationUpdates)
+    @available(iOS 11.0, *)
     static let showsBackgroundLocationIndicator = #keyPath(CLLocationManager.showsBackgroundLocationIndicator)
     static let location = #keyPath(CLLocationManager.location)
     static let headingFilter = #keyPath(CLLocationManager.headingFilter)
