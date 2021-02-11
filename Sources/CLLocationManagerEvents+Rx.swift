@@ -42,6 +42,7 @@ extension Reactive where Base: CLLocationManager {
             .unwrap()
     }
     /// Reactive Observable for `showsBackgroundLocationIndicator`
+    @available(iOS 11.0, *)
     public var showsBackgroundLocationIndicator: Observable<Bool> {
         return self.observe(Bool.self, .showsBackgroundLocationIndicator)
             .map { $0 }
