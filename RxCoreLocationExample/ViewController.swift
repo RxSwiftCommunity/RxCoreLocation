@@ -40,6 +40,24 @@ class ViewController: UIViewController {
             .subscribe(onNext: { _ in })
             .disposed(by: bag)
         
+        if #available(iOS 14, *) {
+            manager.rx
+                .authorizationStatus
+                .debug("authorizationStatus")
+                .subscribe(onNext: { value in
+                    print("authorizationStatus \(value)")
+                })
+                .disposed(by: bag)
+            
+            manager.rx
+                .accuracyAuthorization
+                .debug("accuracyAuthorization")
+                .subscribe(onNext: { value in
+                    print("accuracyAuthorization \(value)")
+                })
+                .disposed(by: bag)
+        }
+        
         /// Subscribe to placemark
         manager.rx
             .placemark
