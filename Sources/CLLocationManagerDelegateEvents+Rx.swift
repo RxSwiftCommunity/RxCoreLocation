@@ -21,6 +21,7 @@ extension Reactive where Base: CLLocationManager {
     }
 
     /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)`
+    @available(iOS, introduced: 4.2, deprecated: 14.0, message: "Use didUpdateAuthorization from iOS 14")
     public var didChangeAuthorization: ControlEvent<CLAuthorizationEvent> {
         let source: Observable<CLAuthorizationEvent> = delegate
             .methodInvoked(.didChangeAuthorization)
@@ -28,6 +29,26 @@ extension Reactive where Base: CLLocationManager {
         return ControlEvent(events: source)
     }
     
+    @available(iOS 14.0, OSX 14.0, watchOSApplicationExtension 7.0, tvOS 14.0, *)
+    public var didLocationManagerDidChangeAuthorization: ControlEvent<CLLocationManagerDidChangeAuthorizationEvent> {
+        let source: Observable<CLLocationManagerDidChangeAuthorizationEvent> = delegate
+            .methodInvoked(.didLocationManagerDidChangeAuthorization)
+            .map(clChangeAuthorizationStatus)
+        
+        return ControlEvent(events: source)
+    }
+    
+    @available(iOS 14.0, OSX 14.0, watchOSApplicationExtension 7.0, tvOS 14.0, *)
+    public var accuracyAuthorization: Observable<CLAccuracyAuthorization> {
+        return self.didLocationManagerDidChangeAuthorization
+            .map({$0.accuracyAuthorization})
+    }
+
+    @available(iOS 14.0, OSX 14.0, watchOSApplicationExtension 7.0, tvOS 14.0, *)
+    public var authorizationStatus: Observable<CLAuthorizationStatus> {
+        return self.didLocationManagerDidChangeAuthorization
+            .map({$0.authorizationStatus})
+    }
     /// Reactive wrapper for `func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])`
     public var didUpdateLocations: ControlEvent<CLLocationsEvent> {
         let source: Observable<CLLocationsEvent> = delegate
