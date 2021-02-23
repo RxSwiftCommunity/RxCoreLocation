@@ -27,6 +27,11 @@ func clAuthorizationStatus(_ args: [Any]) throws -> CLAuthorizationEvent {
     return (manager, status)
 }
 
+func clChangeAuthorizationStatus(_ args: [Any]) throws -> CLLocationManagerDidChangeAuthorizationEvent {
+    let manager = try castOrThrow(CLLocationManager.self, args[0])
+    return (manager)
+}
+
 func clLocationsEvent(_ args: [Any]) throws -> CLLocationsEvent {
     let manager = try castOrThrow(CLLocationManager.self, args[0])
     let locations = try castOrThrow(Array<CLLocation>.self, args[1])

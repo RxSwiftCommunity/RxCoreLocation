@@ -8,6 +8,12 @@
 
 import CoreLocation.CLLocationManagerDelegate
 
+///  locationManagerDidChangeAuthorization
+///
+///  Discussion:
+///    Invoked when the authorization status changes for this application.
+public typealias CLLocationManagerDidChangeAuthorizationEvent = (CLLocationManager)
+
 ///  locationManager:didChangeAuthorizationStatus:
 ///
 ///  Discussion:
