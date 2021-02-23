@@ -9,6 +9,8 @@
 import CoreLocation.CLLocationManagerDelegate
 
 extension Selector {
+    @available(iOS 14.0, OSX 14.0, watchOSApplicationExtension 7.0, tvOS 14.0, *)
+    static let didLocationManagerDidChangeAuthorization = #selector(CLLocationManagerDelegate.locationManagerDidChangeAuthorization(_:))
     static let didChangeAuthorization = #selector(CLLocationManagerDelegate.locationManager(_:didChangeAuthorization:))
     static let didUpdateLocations = #selector(CLLocationManagerDelegate.locationManager(_:didUpdateLocations:))
     static let didFailWithError = #selector(CLLocationManagerDelegate.locationManager(_:didFailWithError:))
