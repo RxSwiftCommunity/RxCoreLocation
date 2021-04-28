@@ -14,7 +14,7 @@ extension String {
     static let desiredAccuracy = #keyPath(CLLocationManager.desiredAccuracy)
     static let pausesLocationUpdatesAutomatically = #keyPath(CLLocationManager.pausesLocationUpdatesAutomatically)
     static let allowsBackgroundLocationUpdates = #keyPath(CLLocationManager.allowsBackgroundLocationUpdates)
-    static let showsBackgroundLocationIndicator = #keyPath(CLLocationManager.showsBackgroundLocationIndicator)
+//    static let showsBackgroundLocationIndicator = #keyPath(CLLocationManager.showsBackgroundLocationIndicator)
     static let location = #keyPath(CLLocationManager.location)
     static let headingFilter = #keyPath(CLLocationManager.headingFilter)
     static let headingOrientation = #keyPath(CLLocationManager.headingOrientation)
