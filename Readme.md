@@ -19,7 +19,7 @@ RxCoreLocation abstract the Rx behavior for Core Location
 
 ## Requirements
 
-- iOS 11.0+ / Mac OS X 10.15+ / tvOS 9.0+ / watchOS 3.0+
+- iOS 11.0+ / Mac OS X 10.15+ / tvOS 9.0+ / watchOS 4.0+
 - Xcode 9.1+
 
 ## Installation
