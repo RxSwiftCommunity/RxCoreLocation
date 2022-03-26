@@ -19,7 +19,7 @@ RxCoreLocation abstract the Rx behavior for Core Location
 
 ## Requirements
 
-- iOS 9.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
+- iOS 11.0+ / Mac OS X 10.15+ / tvOS 9.0+ / watchOS 4.0+
 - Xcode 9.1+
 
 ## Installation
@@ -36,7 +36,7 @@ To integrate RxCoreLocation into your Xcode project using CocoaPods, specify it 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '11.0'
 use_frameworks!
 
 pod 'RxCoreLocation', '~> 1.5.1'
